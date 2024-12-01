@@ -1,0 +1,144 @@
+.button {
+  white-space: nowrap;
+  display: inline-block;
+  // height: 40px;
+  line-height: 40px;
+  padding: 4px 20px;
+  //box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: $primary;
+  border-radius: 17px;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  &:hover {
+    color: #ffffff;
+    background-color: darken($primary, 10%);
+    // transform: translateY(-1px);
+    //box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+  }
+}
+
+
+
+subTextLight, #slide-container {
+  // width: 80%; /* Set the width to 80% */
+  // margin: 0 auto; /* Center the element horizontally */
+}
+
+/* Height of carousel */
+#slide-container {
+//  height: 400px;
+//  overflow: hidden; 
+//  position: relative; 
+  display: inline-block;
+//   margin: 0;
+
+}
+
+.slide {
+ width: 100%; 
+//  position: relative;
+ display: inline-block;
+
+//  overflow: hidden;
+//  margin: 0;
+//  min-height: 200px; 
+}
+
+.slides {
+  display: inline-block;
+
+  animation: fade 1s ease-in-out;
+}
+
+.slides img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Style of arrows */
+.arrow {
+ color: white; 
+ font-size: 26px; 
+ position: absolute; 
+ top: 50%; 
+ transform: translate(0%, -50%); 
+ padding: 16px; 
+ background-color: rgba(0,0,0,0); 
+ transition: background-color 0.3s ease; 
+}
+
+.arrow:hover {
+ cursor: pointer;
+ background-color: var(--transparent-grey); 
+}
+
+#next {
+ left: 100%; 
+ transform: translate(-100%, -50%); 
+ border-radius: 4px 0px 0px 4px; 
+}
+
+#previous {
+ border-radius: 0px 4px 4px 0px; 
+}
+
+#text-bar {
+ background-color: var(--transparent-grey);
+ width: 100%;
+ height: 36px; 
+ position: absolute; 
+ top: 100%;
+ transform: translate(0%, -100%);  
+ text-align: center; 
+ height: 36px;
+ line-height: 36px;
+}
+
+#place {
+ padding: 0px;
+ margin: 0px; 
+ color: white;
+ position: relative;
+ display: inline-block;
+}
+
+#dotsContainer {
+ width: 100%;
+ height: 20px; 
+ text-align: center; 
+}
+
+.dots {
+ width: 8px;
+ height: 8px;
+ background-color: rgba(0,0,0,0.2); 
+ border-radius: 100%; 
+ display: inline-block; 
+ margin: 8px 2px; 
+}
+
+.dots:hover {
+ cursor: pointer; 
+ background-color: rgba(0,0,0,0.4);
+}
+
+.activeDot {
+ background-color: rgba(0,0,0,0.6); 
+}
+
+@keyframes fade {
+  from {
+      opacity: 0.4;
+  }
+  to {
+      opacity: 1;
+  }
+}

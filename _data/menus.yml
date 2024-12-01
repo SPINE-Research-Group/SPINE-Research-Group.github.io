@@ -1,0 +1,25 @@
+main:
+  - name: "Projects"
+    url: "/services/"
+    weight: 2
+  - name: "Publications"
+    url: "/publications/"
+    weight: 3
+  - name: "People"
+    url: "/people/"
+    weight: 4
+  - name: "Collaborators"
+    url: "/people/"
+    weight: 5
+  - name: "News"
+    url: "/news/"
+    weight: 6
+  
+
+footer:
+  - name: "Home"
+    url: "/"
+    weight: 1
+  - name: "Contact"
+    url: "/contact/"
+    weight: 2

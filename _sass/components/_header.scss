@@ -1,0 +1,38 @@
+.header {
+  color: $white !important;
+  background-color: $blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // box-shadow: 0 1px 15px rgba(50, 50, 93, 0.2);
+  // border-bottom: 1px solid $white-offset;
+  padding: 10px 0px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &.header-absolute {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+  }
+  .logoText{
+    color: $white;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    line-height: 1.26;
+    font-weight: normal;
+    text-decoration: none !important;
+    // margin-top: 30px;
+    // margin-bottom: 20px;
+  }
+}
+.lock-scroll {
+  .header {
+    &.header-absolute {
+      position: fixed;
+      z-index: 1000; /* Adjust the z-index as needed to ensure it's above other elements */
+    }
+  }
+}

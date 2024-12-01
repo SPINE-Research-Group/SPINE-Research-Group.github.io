@@ -1,0 +1,5 @@
+**Stanford Students**. We're always looking for Stanford students who are interested in becoming involved with research! We have a variety of projects that range from system and model building to data analysis and user research. We expect undergraduate and M.S. students working with the lab to commit a minimum of 8 hours of time to research every week as well as to attend weekly full lab meetings.
+We typically require that students have taken the introductory course in the topic area that they want to work in (e.g., CS144: Introduction to Computer Networking, CS155: Computer and Network Security, CS 152: Trust and Safety Engineering, or CS229: Machine Learning). Please reach out to Zakir Durumeric or Liz Izhikevich to become involved. You can also browse some of our current projects on CURIS.
+<br><br>
+
+**External Students.** We do not currently have research opportunities for students outside of Stanford University, nor do we have influence over admission into Stanford programs.

@@ -1,0 +1,139 @@
+---
+layout: default
+bodyClass: "page-home"
+---
+<!-- Courosel -->
+<div class="strip">
+  <div class="container">
+  <div class="carousel">
+      <div id="slide-container">
+        <div class="slides">   
+          <img class="slide" src="/images/hero-image.jpg"/> 
+          <div id="text-bar">
+            <p id="place"></p>
+          </div>
+        </div>
+        
+        <!-- <a id="previous" class="arrow">&#10094</a>
+        <a id="next" class="arrow">&#10095</a> -->
+       
+      </div>
+      <div id="dotsContainer"></div>
+  </div>
+  </div>
+</div>
+
+<!-- Title -->
+<div class="intro">
+  <div class="container">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-12 col-lg-12 mt-0"">
+          {{ content }}
+      </div>
+      {% if page.intro_image %}
+      <!-- <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
+        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
+      </div> -->
+      {% endif %}
+    </div>
+  </div>
+</div>
+<!-- People -->
+<div class="strip strip-grey">
+  <div class="container pt-6 pb-6">
+    <div class="row pt-6 pb-6">
+      <h1>People</h1>
+      {% assign people = site.people %}
+      {% for people in people %}
+      <div class="col-12 col-md-4 mb-3">
+          <div class="team team-summary">
+              {% if people.image %}
+              <div class="team-image">
+                  <img width="60" height="60" alt="{{ people.title }}" class="img-fluid mb-2" src="{{ people.image | relative_url }}" />
+              </div>
+              {% endif %}
+              <div class="team-meta">
+                  <h3 class="team-name"><a href="{{ people.url | relative_url }}">{{ people.name }}</a></h3>
+                  <p class="team-description">{{ people.title }}</p>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  <!-- Button -->
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <a class="button" href="{{ "people" | relative_url }}">View All People</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- News -->
+<div class="strip">
+  <div class="container pt-6 pb-6 pb-md-10">
+    <div class="row justify-content-start">
+      <div class="row pt-6 pb-6">
+        <h1>News</h1>
+        {% assign limit = site.home.limit_news | default: 6 %}
+        {% for news in site.news limit: limit %}
+        <div class="col-12 col-md-12 mb-3">
+          <div class="service service-summary">
+            <div class="service-content">
+              <p class="subTextLight">{{ news.datetime | date: "%Y-%m-%d" }}</p>            
+              <h3 class="service-title">
+                <a href="{{ news.url | relative_url }}">{{ news.title }}</a>
+              </h3>
+              <!-- <p class="subTextBold">By {{ news.author}}</p> -->
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ "news" | relative_url }}">View All News</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Joining the lab -->
+<div class="strip strip-grey">
+  <div class="container pt-6 pb-6">
+    <h1>Joining the lab</h1>
+      {% capture join_content %}{% include_relative join.md %}{% endcapture %}
+      {{ join_content | markdownify }}
+    </div>
+  </div>
+</div>
+<!-- Projects -->
+<div class="strip">
+  <div class="container pt-6 pb-6 pb-md-10">
+    <div class="row justify-content-start">
+      <div class="row pt-6 pb-6">
+        <h1>Software, Datasets, and Resources</h1>
+        {% assign limit = site.home.limit_services | default: 6 %}
+        {% for service in site.services limit: limit %}
+        <div class="col-12 col-md-4 mb-1">
+          <div class="service service-summary">
+            <div class="service-content">
+              <h2 class="service-title">
+                <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
+              </h2>
+              <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ "services" | relative_url }}">View All Projects</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- new -->
+
