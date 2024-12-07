@@ -40,28 +40,30 @@ bodyClass: "page-home"
 </div>
 <!-- People -->
 <div class="strip strip-grey">
-  <div class="container pt-6 pb-6">
-    <div class="row pt-6 pb-6">
+  <div class="container pt-3 pb-3">
+    <div class="row pt-3 pb-2">
       <h1>People</h1>
       {% assign people = site.people %}
-      {% for people in people %}
-      <div class="col-12 col-md-4 mb-3">
-          <div class="team team-summary">
-              {% if people.image %}
-              <div class="team-image">
-                  <img width="60" height="60" alt="{{ people.title }}" class="img-fluid mb-2" src="{{ people.image | relative_url }}" />
-              </div>
-              {% endif %}
-              <div class="team-meta">
-                  <h3 class="team-name"><a href="{{ people.url | relative_url }}">{{ people.name }}</a></h3>
-                  <p class="team-description">{{ people.title }}</p>
-              </div>
-          </div>
-      </div>
+      {% for person  in people %}
+        {% if person.type == "profile" %}
+        <div class="col-12 col-md-4 mb-3">
+            <div class="team team-summary">
+                <!-- {% if people.image %}
+                <div class="team-image">
+                    <img width="60" height="60" alt="{{ people.title }}" class="img-fluid mb-2" src="{{ people.image | relative_url }}" />
+                </div>
+                {% endif %} -->
+                <div class="team-meta">
+                    <h3 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>
+                    <p class="team-description">{{ person.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
       {% endfor %}
   </div>
   <!-- Button -->
-  <div class="row justify-content-center">
+  <div class="row justify-content-left">
     <div class="col-auto">
       <a class="button" href="{{ "people" | relative_url }}">View All People</a>
     </div>
@@ -70,9 +72,9 @@ bodyClass: "page-home"
 </div>
 <!-- News -->
 <div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
+  <div class="container pt-3 pb-3">
     <div class="row justify-content-start">
-      <div class="row pt-6 pb-6">
+      <div class="row pt-3 pb-2">
         <h1>News</h1>
         {% assign limit = site.home.limit_news | default: 6 %}
         {% for news in site.news limit: limit %}
@@ -90,7 +92,7 @@ bodyClass: "page-home"
         {% endfor %}
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-left">
       <div class="col-auto">
         <a class="button button-primary" href="{{ "news" | relative_url }}">View All News</a>
       </div>
@@ -98,19 +100,19 @@ bodyClass: "page-home"
   </div>
 </div>
 <!-- Joining the lab -->
-<div class="strip strip-grey">
+<!-- <div class="strip strip-grey">
   <div class="container pt-6 pb-6">
     <h1>Joining the lab</h1>
       {% capture join_content %}{% include_relative join.md %}{% endcapture %}
       {{ join_content | markdownify }}
     </div>
   </div>
-</div>
+</div> -->
 <!-- Projects -->
-<div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
+<div class="strip strip-grey">
+  <div class="container pt-3 pb-3">
     <div class="row justify-content-start">
-      <div class="row pt-6 pb-6">
+      <div class="row pt-3 pb-2">
         <h1>Software, Datasets, and Resources</h1>
         {% assign limit = site.home.limit_services | default: 6 %}
         {% for service in site.services limit: limit %}
@@ -127,7 +129,7 @@ bodyClass: "page-home"
         {% endfor %}
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-left">
       <div class="col-auto">
         <a class="button button-primary" href="{{ "services" | relative_url }}">View All Projects</a>
       </div>

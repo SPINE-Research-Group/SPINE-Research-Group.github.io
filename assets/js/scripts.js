@@ -9,7 +9,7 @@ menuTrigger.onclick = function() {
 }
 
 var index = 0;
-var locations = ["SPINE Team", "SPINE Team", "SPINE Team"];
+// var locations = ["SPINE Team", "SPINE Team", "SPINE Team"];
 
 var slides = document.getElementsByClassName("slides");
 var nextArrow = document.getElementById("next");
