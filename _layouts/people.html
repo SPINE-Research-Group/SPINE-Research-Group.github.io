@@ -17,24 +17,29 @@ bodyClass: "page-teams"
         </div>
     </div>
 </div>
+<div class="strip strip-grey">
 
-<!-- <div class="container pt-6 pb-6">
+<div class="container pt-6 pb-6">
     <div class="row">
-            {% assign people = site.people %}
-            {% for people in people %}
+
+        {% assign people = site.people %}
+        {% for person  in people %}
+          {% if person.type == "profile" %}
             <div class="col-12 col-md-4 mb-3">
                 <div class="team team-summary">
-                    {% if people.image %}
+                    {% if person.image %}
                     <div class="team-image">
-                        <img width="60" height="60" alt="{{ people.title }}" class="img-fluid mb-2" src="{{ people.image | relative_url }}" />
+                        <img width="60" height="60" alt="{{ person.title }}" class="img-fluid mb-2" src="{{ person.image | relative_url }}" />
                     </div>
                     {% endif %}
                     <div class="team-meta">
-                        <h2 class="team-name"><a href="{{ people.url | relative_url }}">{{ people.name }}</a></h2>
-                        <p class="team-description">{{ people.title }}</p>
+                        <h2 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h2>
+                        <p class="team-description">{{ person.title }}</p>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            {% endif %}
+      {% endfor %}
     </div>
-</div> -->
+    </div>
+</div>

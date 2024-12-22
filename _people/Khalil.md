@@ -1,7 +1,7 @@
 ---
 name: "Ibrahim Khalil"
 title: "Professor"
-image: "images/people/billy.jpg"
+image: "https://0.academia-photos.com/35382418/10280328/11472350/s200_ibrahim.khalil.png"
 linkedinurl: ""
 weight: 2
 type: "profile"

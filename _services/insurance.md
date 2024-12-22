@@ -1,5 +1,5 @@
 ---
-title: "Insurance"
+title: "Secure, Robust, and Scalable Privacy Preserving Data Analytics and Machine Learning Framework for IoT System"
 date: 2019-05-18T12:33:46+10:00
 weight: 7
 ---

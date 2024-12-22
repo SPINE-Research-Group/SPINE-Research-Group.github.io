@@ -1,5 +1,5 @@
 ---
-title: "Mergers"
+title: "Evaluating the Efficacy of Trust-Based Intelligence Routing Algorithm Using Neural Networks for Delay Tolerant Network in the Enhancement of the Internet of Things(IoT) Security"
 date: 2019-02-28T15:15:34+10:00
 weight: 3
 ---

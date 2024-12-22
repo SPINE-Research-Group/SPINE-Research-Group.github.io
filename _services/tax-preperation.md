@@ -1,5 +1,5 @@
 ---
-title: "Tax Preperation"
+title: "Reliable and Secure Low Energy Sensed Spectrum Communication for Time Critical CloudComputing Applications"
 date: 2019-04-18T12:33:46+10:00
 weight: 6
 ---
