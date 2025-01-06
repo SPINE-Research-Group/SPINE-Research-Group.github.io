@@ -119,3 +119,14 @@ body {
     line-height: 1.3;
   }
 }
+
+#controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#publications-list {
+  list-style: none;
+  padding: 0;
+}

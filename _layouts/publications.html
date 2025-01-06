@@ -6,18 +6,119 @@ bodyClass: "page-services"
 <div class="intro">
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-7 col-lg-12 order-2 order-md-1 text-center">
+      <div class="col-12 col-md-7 col-lg-12 text-center mb-5">
         {{ content }}
+      </div>
+      <div class="col-12">
+        <div id="controls">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select">
+            <option value="year-desc">Year (Newest First)</option>
+            <option value="year-asc">Year (Oldest First)</option>
+            <option value="rank-asc">Rank (A-Z)</option>
+            <option value="rank-desc">Rank (Z-A)</option>
+          </select>
+
+          <!-- <label for="search-bar">Search:</label>
+          <input type="text" id="search-bar" placeholder="Search by title, author, or journal" /> -->
+        </div>
+
+        <div id="publications-list">
+          {% assign grouped_publications = page.publications | sort: "year" | reverse %}
+          {% assign current_year = nil %}
+          {% for pub in grouped_publications %}
+          {% if pub.year != current_year %}
+          {% unless forloop.first %}
+          </ul>
+          {% endunless %}
+          <h3>{{ pub.year }}</h3>
+          <ul id="publications-list">
+            {% assign current_year = pub.year %}
+            {% endif %}
+            <li class="publication mb-2" data-year="{{ pub.year }}" data-journal-rank="{{ pub.rank }}"
+              data-authors="{{ pub.authors | join: ', ' }}">
+              <strong>{{ pub.title }}</strong><br>
+              {{ pub.authors | join: ', ' }}<br>
+              <em>{{ pub.journal }} {{ pub.volume }} ({{ pub.year }}).</em><br>
+              Source: <a href="{{ pub.source }}">{{ pub.source }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container pt-6 pb-6">
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sortSelect = document.getElementById('sort-select');
+    const searchBar = document.getElementById('search-bar');
+    const publicationsList = document.getElementById('publications-list');
+    const publications = Array.from(publicationsList.querySelectorAll('.publication'));
+    const headings = Array.from(publicationsList.querySelectorAll('h3'));
+
+    const sortPublications = (criteria) => {
+      let sorted;
+      if (criteria === 'year-desc') {
+        sorted = publications.sort((a, b) => b.dataset.year - a.dataset.year);
+      } else if (criteria === 'year-asc') {
+        sorted = publications.sort((a, b) => a.dataset.year - b.dataset.year);
+      } else if (criteria === 'rank-asc') {
+        sorted = publications.sort((a, b) => a.dataset.journalRank.localeCompare(b.dataset.journalRank));
+      } else if (criteria === 'rank-desc') {
+        sorted = publications.sort((a, b) => b.dataset.journalRank.localeCompare(a.dataset.journalRank));
+      }
+
+      // Clear existing list and re-append sorted elements
+      headings.forEach(heading => heading.remove());
+      publicationsList.innerHTML = '';
+      sorted.forEach(pub => {
+        const yearHeading = document.querySelector(`h3[data-year="${pub.dataset.year}"]`);
+        if (!yearHeading) {
+          const h3 = document.createElement('h3');
+          h3.textContent = pub.dataset.year;
+          h3.dataset.year = pub.dataset.year;
+          publicationsList.appendChild(h3);
+        }
+        publicationsList.appendChild(pub);
+      });
+    };
+
+    const filterPublications = (query) => {
+      const lowerQuery = query.toLowerCase();
+      let currentYearVisible = false;
+
+      publications.forEach(pub => {
+        const title = pub.dataset.title.toLowerCase();
+        const authors = pub.dataset.authors.toLowerCase();
+        const journal = pub.dataset.journal.toLowerCase();
+        const matches = title.includes(lowerQuery) || authors.includes(lowerQuery) || journal.includes(lowerQuery);
+        pub.style.display = matches ? '' : 'none';
+
+        if (matches) {
+          currentYearVisible = true;
+        }
+
+        if (!matches && pub.previousElementSibling.tagName === 'h3') {
+          pub.previousElementSibling.style.display = currentYearVisible ? '' : 'none';
+          currentYearVisible = false;
+        }
+      });
+    };
+
+    // Event Listeners
+    sortSelect.addEventListener('change', (e) => sortPublications(e.target.value));
+    searchBar.addEventListener('input', (e) => filterPublications(e.target.value));
+  });
+</script>
+
+<!-- <div class="container pt-6 pb-6">
   <div class="row">
     {% assign pubs = site.publications | sort: "year" | reverse %}
     {% for publications in pubs %}
-    <div class="col-12 col-md-6 mb-3">
+    <div class="col-12">
       <div class="service service-summary">
         <div class="service-content">
           <h4 class="service-title">
@@ -30,4 +131,4 @@ bodyClass: "page-services"
     </div>
     {% endfor %}
   </div>
-</div>
+</div> -->

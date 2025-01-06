@@ -72,3 +72,41 @@ for (var i = 0; i < slides.length; i++) {
         slideInterval = setInterval(autoSlide, 4000);
     });
 }
+
+
+//publications
+document.addEventListener('DOMContentLoaded', () => {
+    const sortSelect = document.getElementById('sort-select');
+    const searchBar = document.getElementById('search-bar');
+    const publicationsList = document.getElementById('publications-list');
+    const publications = Array.from(publicationsList.querySelectorAll('.publication'));
+  
+    const sortPublications = (criteria) => {
+      let sorted;
+      if (criteria === 'year-desc') {
+        sorted = publications.sort((a, b) => b.dataset.year - a.dataset.year);
+      } else if (criteria === 'year-asc') {
+        sorted = publications.sort((a, b) => a.dataset.year - b.dataset.year);
+      } else if (criteria === 'rank-asc') {
+        sorted = publications.sort((a, b) => a.dataset.journalRank.localeCompare(b.dataset.journalRank));
+      } else if (criteria === 'rank-desc') {
+        sorted = publications.sort((a, b) => b.dataset.journalRank.localeCompare(a.dataset.journalRank));
+      }
+      sorted.forEach(pub => publicationsList.appendChild(pub));
+    };
+  
+    const filterPublications = (query) => {
+      const lowerQuery = query.toLowerCase();
+      publications.forEach(pub => {
+        const title = pub.dataset.title;
+        const authors = pub.dataset.authors.toLowerCase();
+        const journal = pub.dataset.journal;
+        const matches = title.includes(lowerQuery) || authors.includes(lowerQuery) || journal.includes(lowerQuery);
+        pub.style.display = matches ? '' : 'none';
+      });
+    };
+  
+    // Event Listeners
+    sortSelect.addEventListener('change', (e) => sortPublications(e.target.value));
+    searchBar.addEventListener('input', (e) => filterPublications(e.target.value));
+  });

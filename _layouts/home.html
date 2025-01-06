@@ -5,21 +5,21 @@ bodyClass: "page-home"
 <!-- Courosel -->
 <div class="strip">
   <div class="container">
-  <div class="carousel">
+    <div class="carousel">
       <div id="slide-container">
-        <div class="slides">   
-          <img class="slide" src="/images/hero-image.jpg"/> 
+        <div class="slides">
+          <img class="slide" src="/images/hero-image.jpg" />
           <div id="text-bar">
             <p id="place"></p>
           </div>
         </div>
-        
+
         <!-- <a id="previous" class="arrow">&#10094</a>
         <a id="next" class="arrow">&#10095</a> -->
-       
+
       </div>
       <div id="dotsContainer"></div>
-  </div>
+    </div>
   </div>
 </div>
 
@@ -31,8 +31,10 @@ bodyClass: "page-home"
           {{ content }}
       </div>
       {% if page.intro_image %}
-      <!-- <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
+      <!-- <div class=" col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
+        <img alt="{{ page.title }}"
+          class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}"
+          src="{{ page.intro_image | relURL }}" />
       </div> -->
       {% endif %}
     </div>
@@ -44,31 +46,31 @@ bodyClass: "page-home"
     <div class="row pt-3 pb-2">
       <h1>People</h1>
       {% assign people = site.people %}
-      {% for person  in people %}
-        {% if person.type == "profile" %}
-        <div class="col-12 col-md-4 mb-3">
-            <div class="team team-summary">
-                <!-- {% if people.image %}
+      {% for person in people %}
+      {% if person.type == "profile" %}
+      <div class="col-12 col-md-4 mb-3">
+        <div class="team team-summary">
+          <!-- {% if people.image %}
                 <div class="team-image">
                     <img width="60" height="60" alt="{{ people.title }}" class="img-fluid mb-2" src="{{ people.image | relative_url }}" />
                 </div>
                 {% endif %} -->
-                <div class="team-meta">
-                    <h3 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>
-                    <p class="team-description">{{ person.title }}</p>
-                </div>
-            </div>
+          <div class="team-meta">
+            <h3 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>
+            <p class="team-description">{{ person.title }}</p>
+          </div>
         </div>
-        {% endif %}
+      </div>
+      {% endif %}
       {% endfor %}
-  </div>
-  <!-- Button -->
-  <div class="row justify-content-left">
-    <div class="col-auto">
-      <a class="button" href="{{ "people" | relative_url }}">View All People</a>
+    </div>
+    <!-- Button -->
+    <div class="row justify-content-left">
+      <div class="col-auto">
+        <a class="button" href="{{ " people" | relative_url }}">View All People</a>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <!-- News -->
 <div class="strip">
@@ -81,7 +83,7 @@ bodyClass: "page-home"
         <div class="col-12 col-md-12 mb-3">
           <div class="service service-summary">
             <div class="service-content">
-              <p class="subTextLight">{{ news.datetime | date: "%Y-%m-%d" }}</p>            
+              <p class="subTextLight">{{ news.datetime | date: "%Y-%m-%d" }}</p>
               <h3 class="service-title">
                 <a href="{{ news.url | relative_url }}">{{ news.title }}</a>
               </h3>
@@ -94,7 +96,45 @@ bodyClass: "page-home"
     </div>
     <div class="row justify-content-left">
       <div class="col-auto">
-        <a class="button button-primary" href="{{ "news" | relative_url }}">View All News</a>
+        <a class="button button-primary" href="{{ " news" | relative_url }}">View All News</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Publications -->
+<div class="strip strip-grey">
+  <div class="container pt-3 pb-3">
+    <div class="row justify-content-start">
+      <div class="row pt-3 pb-2">
+        <h1>Latest Publications</h1>
+        {% assign publications_page = site.pages | where: "title", "Publications" | first %}
+        {% if publications_page %}
+          {% assign publications_list = publications_page.publications | sort: "year" | reverse | slice: 0, 3 %}
+          {% if publications_list %}
+            {% for pub in publications_list %}
+            <div class="col-12 col-md-12 mb-3">
+              <div class="service service-summary">
+                <div class="service-content">
+                  <h3 class="service-title">
+                    <a href="{{ pub.source }}" target="_blank">{{ pub.title }}</a>
+                  </h3>
+                  <p class="subTextBold">By {{ pub.authors | join: ', ' }}</p>
+                  <p><em>{{ pub.journal }} {{ pub.volume }} ({{ pub.year }})</em></p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          {% else %}
+            <p>No publications available.</p>
+          {% endif %}
+        {% else %}
+          <p>Publications page not found.</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="row justify-content-left">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ "publications" | relative_url }}">View All Publications</a>
       </div>
     </div>
   </div>
@@ -109,7 +149,7 @@ bodyClass: "page-home"
   </div>
 </div> -->
 <!-- Projects -->
-<div class="strip strip-grey">
+<!-- <div class="strip strip-grey">
   <div class="container pt-3 pb-3">
     <div class="row justify-content-start">
       <div class="row pt-3 pb-2">
@@ -122,7 +162,7 @@ bodyClass: "page-home"
               <h3 class="service-title">
                 <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
               </h3>
-              <!-- <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p> -->
+              <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
             </div>
           </div>
         </div>
@@ -135,7 +175,6 @@ bodyClass: "page-home"
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- new -->
-
