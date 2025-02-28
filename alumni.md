@@ -1,6 +1,6 @@
 ---
 title: Alumni
-layout: teams
+layout: singlenews
 description: Alumni
 permalink: "/alumni/"
 intro_image_absolute: true
