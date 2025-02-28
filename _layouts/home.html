@@ -45,9 +45,8 @@ bodyClass: "page-home"
   <div class="container pt-3 pb-3">
     <div class="row pt-3 pb-2">
       <h1>People</h1>
-      {% assign people = site.people %}
+      {% assign people = site.people | where: "type", "profile" | slice: 0,3 %}
       {% for person in people %}
-      {% if person.type == "profile" %}
       <div class="col-12 col-md-4 mb-3">
         <div class="team team-summary">
           <!-- {% if people.image %}
@@ -61,7 +60,6 @@ bodyClass: "page-home"
           </div>
         </div>
       </div>
-      {% endif %}
       {% endfor %}
     </div>
     <!-- Button -->
