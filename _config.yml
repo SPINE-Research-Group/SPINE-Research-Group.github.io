@@ -25,6 +25,8 @@ collections:
     output: true
   publications:
     output: true
+  alumni:
+    output: true
 
 defaults:
   - scope:

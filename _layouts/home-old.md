@@ -71,9 +71,36 @@ bodyClass: "page-home"
   </div>
 </div>
 <!-- News -->
-
-<!-- Publications -->
 <div class="strip">
+  <div class="container pt-3 pb-3">
+    <div class="row justify-content-start">
+      <div class="row pt-3 pb-2">
+        <h1>News</h1>
+        {% assign limit = site.home.limit_news | default: 6 %}
+        {% for news in site.news limit: limit %}
+        <div class="col-12 col-md-12 mb-3">
+          <div class="service service-summary">
+            <div class="service-content">
+              <p class="subTextLight">{{ news.datetime | date: "%Y-%m-%d" }}</p>
+              <h3 class="service-title">
+                <a href="{{ news.url | relative_url }}">{{ news.title }}</a>
+              </h3>
+              <!-- <p class="subTextBold">By {{ news.author}}</p> -->
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="row justify-content-left">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ " news" | relative_url }}">View All News</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Publications -->
+<div class="strip strip-grey">
   <div class="container pt-3 pb-3">
     <div class="row justify-content-start">
       <div class="row pt-3 pb-2">

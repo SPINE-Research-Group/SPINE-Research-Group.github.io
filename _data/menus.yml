@@ -8,12 +8,10 @@ main:
   - name: "People"
     url: "/people/"
     weight: 4
-  - name: "Alumni"
-    url: "/alumni/"
-    weight: 5
-  - name: "News"
-    url: "/news/"
-    weight: 6
+  # - name: "Alumni"
+  #   url: "/alumni/"
+  #   weight: 5
+  
   
 
 footer:
