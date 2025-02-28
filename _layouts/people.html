@@ -17,29 +17,38 @@ bodyClass: "page-teams"
         </div>
     </div>
 </div>
-<div class="strip strip-grey">
+<div class="strip">
 
-<div class="container pt-6 pb-6">
-    <div class="row">
-
-        {% assign people = site.people %}
-        {% for person  in people %}
-          {% if person.type == "profile" %}
+    <div class="container pt-6 pb-6" >
+        <div class="row" id="team-container">
+            {% assign people = site.people | sort: "weight" %}
+            {% for person in people %}
+            {% if person.type == "profile" %}
             <div class="col-12 col-md-4 mb-3">
                 <div class="team team-summary">
                     {% if person.image %}
                     <div class="team-image">
-                        <img width="60" height="60" alt="{{ person.title }}" class="img-fluid mb-2" src="{{ person.image | relative_url }}" />
+                        <img width="60" height="60" alt="{{ person.title }}" class="img-fluid mb-2"
+                            src="{{ person.image | relative_url }}" />
                     </div>
                     {% endif %}
                     <div class="team-meta">
                         <h2 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h2>
-                        <p class="team-description">{{ person.title }}</p>
+                        <a href="{{ person.linkedinurl }}" target="_blank" class="team-description">LinkedIn</a>
                     </div>
                 </div>
             </div>
             {% endif %}
-      {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-    </div>
+    <script>
+        // JavaScript to shuffle the team elements on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            var teamContainer = document.getElementById('team-container');
+            for (var i = teamContainer.children.length; i >= 0; i--) {
+                teamContainer.appendChild(teamContainer.children[Math.random() * i | 0]);
+            }
+        });
+    </script>
 </div>

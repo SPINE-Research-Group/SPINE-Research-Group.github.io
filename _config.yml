@@ -52,6 +52,11 @@ defaults:
       type: "publications"
     values:
       layout: "service"
+  - scope:
+      path: ""
+      type: "alumni"
+    values:
+      layout: "team"
 
 sass:
   style: compressed # possible values: nested expanded compact compressed
