@@ -7,5 +7,4 @@ weight: 1
 type: profile
 
 ---
-# Charitha Elvitigala
 Researcher

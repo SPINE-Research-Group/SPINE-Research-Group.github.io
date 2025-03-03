@@ -8,7 +8,6 @@ type: "profile"
 featured: true
 ---
  
-# Professor Ibrahim Khalil
 [View Bibliography](/people/Khalil/bibliography/)
 
 ## Contact Details:

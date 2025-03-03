@@ -19,11 +19,34 @@ bodyClass: "page-teams"
 </div>
 <div class="strip">
 
-    <div class="container pt-6 pb-6" >
-        <div class="row" id="team-container">
+    <div class="container pt-1 pb-6">
+        <div class="row">
+            {% assign promoted_teams = site.people | where: "featured", true | sort: "weight" %}
+            {% for person in promoted_teams %}
+            <div class="col-12 col-md-6 mb-2">
+                <div class="team team-summary team-summary-large">
+                    {% if person.image %}
+                    <div class="team-image">
+                        <img width="90" height="90" alt="{{ person.title }}" class="img-fluid mb-2"
+                            src="{{ person.image | relative_url }}" />
+                    </div>
+                    {% endif %}
+                    <div class="team-meta">
+                        <h3 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>
+                        <p class="team-description">{{ person.title }}</p>
+                        {% if person.linkedinurl %}
+                        <a target="_blank" href="{{ team.linkedinurl }}" rel="noreferrer">LinkedIn</a>
+                        {% endif %}
+                    </div>
+                    <!-- <div class="team-content">{{ person.excerpt | truncate: 120 }}</div> -->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row  pt-6 pb-6" id="team-container">
             {% assign people = site.people | sort: "weight" %}
             {% for person in people %}
-            {% if person.type == "profile" %}
+            {% if person.type == "profile" and person.featured != true %}
             <div class="col-12 col-md-4 mb-3">
                 <div class="team team-summary">
                     {% if person.image %}
@@ -33,7 +56,7 @@ bodyClass: "page-teams"
                     </div>
                     {% endif %}
                     <div class="team-meta">
-                        <h2 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h2>
+                        <h3 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>
                         <a href="{{ person.linkedinurl }}" target="_blank" class="team-description">LinkedIn</a>
                     </div>
                 </div>

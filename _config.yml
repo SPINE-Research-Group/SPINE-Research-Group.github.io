@@ -43,7 +43,7 @@ defaults:
       path: ""
       type: "people"
     values:
-      layout: "people"
+      layout: "team"
   - scope:
       path: ""
       type: "news"

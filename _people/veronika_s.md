@@ -7,5 +7,4 @@ weight: 2
 type: profile
 
 ---
-# Veronika Stephanie
 Researcher

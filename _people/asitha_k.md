@@ -7,5 +7,4 @@ weight: 1
 type: profile
 
 ---
-# Asitha Kottahachchi
 Researcher
