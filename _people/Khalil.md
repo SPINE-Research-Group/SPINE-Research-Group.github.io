@@ -1,10 +1,11 @@
 ---
-name: "Ibrahim Khalil"
+name: "Prof. Ibrahim Khalil"
 title: "Professor"
 image: "https://i.imgur.com/WuUGRey.jpeg"
 linkedinurl: "https://www.linkedin.com/in/ibrahim-khalil-b8bb1641/"
 weight: 2
 type: "profile"
+featured: true
 ---
  
 # Professor Ibrahim Khalil

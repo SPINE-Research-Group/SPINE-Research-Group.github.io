@@ -43,19 +43,37 @@ bodyClass: "page-home"
 <!-- People -->
 <div class="strip strip-grey">
   <div class="container pt-3 pb-3">
-    <div class="row pt-3 pb-2">
-      <h1>People</h1>
-      {% assign people = site.people | where: "type", "profile" | slice: 0,3 %}
-      {% for person in people %}
-      <div class="col-12 col-md-4 mb-3">
+    <h1 class="row pt-3">People</h1>
+    <div class="row pt-1 pb-2" id="team-container">
+      <!-- This will hold all team members, with professor first and rest shuffled -->
+      {% assign featured_people = site.people | where: "type", "profile" | where: "featured", true %}
+      {% for person in featured_people %}
+      <div class="col-12 col-md-4 mb-3 team-fixed">
         <div class="team team-summary">
-          <!-- {% if people.image %}
-                <div class="team-image">
-                    <img width="60" height="60" alt="{{ people.title }}" class="img-fluid mb-2" src="{{ people.image | relative_url }}" />
-                </div>
-                {% endif %} -->
+          {% if person.image %}
+            <div class="team-image">
+                <img alt="{{ person.name }}" class="img-fluid mb-2" src="{{ person.image | relative_url }}" />
+            </div>
+          {% endif %}
           <div class="team-meta">
-            <h3 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h3>
+            <h2 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h2>
+            <p class="team-description">{{ person.title }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+      {% assign regular_people = site.people | where: "type", "profile" | where_exp: "person", "person.featured != true" %}
+      {% for person in regular_people %}
+      <div class="col-12 col-md-4 mb-3 team-shuffle">
+        <div class="team team-summary">
+          {% if person.image %}
+            <div class="team-image">
+                <img alt="{{ person.name }}" class="img-fluid mb-2" src="{{ person.image | relative_url }}" />
+            </div>
+          {% endif %}
+          <div class="team-meta">
+            <h2 class="team-name"><a href="{{ person.url | relative_url }}">{{ person.name }}</a></h2>
             <p class="team-description">{{ person.title }}</p>
           </div>
         </div>
@@ -70,6 +88,32 @@ bodyClass: "page-home"
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var teamContainer = document.getElementById('team-container');
+    var fixedItems = document.getElementsByClassName('team-fixed');
+    var shuffleItems = Array.from(document.getElementsByClassName('team-shuffle'));
+    
+    // First, remove all shuffle items from the container
+    shuffleItems.forEach(function(item) {
+      teamContainer.removeChild(item);
+    });
+    
+    // Shuffle the array of elements to be shuffled
+    for (var i = shuffleItems.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = shuffleItems[i];
+      shuffleItems[i] = shuffleItems[j];
+      shuffleItems[j] = temp;
+    }
+    
+    // Append all shuffled items back to the container
+    // This keeps the fixed items in place and puts shuffled items after them
+    shuffleItems.forEach(function(item) {
+      teamContainer.appendChild(item);
+    });
+  });
+</script>
 <!-- News -->
 
 <!-- Publications -->

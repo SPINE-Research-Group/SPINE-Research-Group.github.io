@@ -4,8 +4,8 @@
         flex-wrap: wrap;
         flex-direction: row;
         .team-image {
-          height: 60px;
-          width: 60px;
+          height: 45px;
+          width: 45px;
           margin-right: 10px;
           border-radius: 50%;
           overflow: hidden;
@@ -17,7 +17,7 @@
           flex: 1;
           h2 {
             margin: 0;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: normal;
           }
           p {
