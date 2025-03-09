@@ -34,6 +34,11 @@ defaults:
       type: "services"
     values:
       layout: "service"
+   - scope:
+      path: ""
+      type: "grants"
+    values:
+      layout: "page"
   - scope:
       path: ""
       type: "team"
