@@ -31,19 +31,14 @@ collections:
 defaults:
   - scope:
       path: ""
-      type: "services"
+      type: "team"
     values:
-      layout: "service"
-   - scope:
+      layout: "team"
+  - scope:
       path: ""
       type: "grants"
     values:
       layout: "page"
-  - scope:
-      path: ""
-      type: "team"
-    values:
-      layout: "team"
   - scope:
       path: ""
       type: "people"
