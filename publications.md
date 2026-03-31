@@ -6,6 +6,230 @@ intro_image_hide_on_mobile: true
 publications:
 
   - type: "Journal Articles"
+    title: "Leveraging Large Language Models for Multi-Objective and Adaptive SFC Deployment: Techniques, Case Study, and Promising Directions."
+    authors: ['Longlong Zhu', 'Jiashuo Yu', 'Xiang Chen', 'Zhifan Jiang', 'Xuan Liu', 'Jianshan Zhang', 'Xu Yang', 'Ruichen Zhang', 'Dusit Niyato', 'Xun Yi', 'Ibrahim Khalil', 'Dong Zhang', 'Chunming Wu']
+    journal: "IEEE Commun. Mag."
+    volume: "32-39"
+    year: 2026
+    source: "https://doi.org/10.1109/MCOM.001.2500254"
+
+  - type: "Journal Articles"
+    title: "SSFU: Selective Semantic Feature Unlearning for Federated Learning in 6G Internet of Things Systems."
+    authors: ['Wathsara Daluwatta', 'Ibrahim Khalil', 'Shehan Edirimannage', 'Charitha Elvitigala', 'Jer Shyuan Ng', 'Dusit Niyato']
+    journal: "IEEE Internet Things J."
+    volume: "852-867"
+    year: 2026
+    source: "https://doi.org/10.1109/JIOT.2025.3625756"
+
+  - type: "Journal Articles"
+    title: "Toward Personalized Federated Meta-Learning With Constrained Hypernetwork on Non-IID Data."
+    authors: ['Lizhao Wu', 'Xiaoding Wang', 'Hui Lin', 'Xu Yang', 'Jiwu Shu', 'Xun Yi', 'Ibrahim Khalil', 'Albert Y. Zomaya']
+    journal: "IEEE Trans. Computers"
+    volume: "233-246"
+    year: 2026
+    source: "https://doi.org/10.1109/TC.2025.3625233"
+
+  - type: "Journal Articles"
+    title: "KGEES: An Energy Saving System With Location Privacy Preservation in Multi-Access Edge Computing."
+    authors: ['Ziqi Wang', 'Xiaoyu Xia', 'Ibrahim Khalil', 'Minghui Liwang', 'Xiaolong Xu', 'Xun Yi', 'Yan Li', 'Minhui Xue']
+    journal: "IEEE Trans. Dependable Secur. Comput."
+    volume: "3814-3827"
+    year: 2026
+    source: "https://doi.org/10.1109/TDSC.2025.3641177"
+
+  - type: "Journal Articles"
+    title: "Data Flipping Attack and Defense in Web Edge Caching Systems."
+    authors: ['Mengsha Kou', 'Xiaoyu Xia', 'Ibrahim Khalil', 'Ziqi Wang', 'Xiuzhen Zhang', 'Lin Yao', 'Minhui Xue']
+    journal: "IEEE Trans. Inf. Forensics Secur."
+    volume: "2505-2519"
+    year: 2026
+    source: "https://doi.org/10.1109/TIFS.2026.3663056"
+
+  - type: "Journal Articles"
+    title: "SecHeto-FL: A Secure and Resilient Federated Learning Framework for Heterogeneous IoT Networks."
+    authors: ['Shehan Edirimannage', 'Ibrahim Khalil', 'Xun Yi', 'Kwok-Yan Lam']
+    journal: "IEEE Trans. Netw. Sci. Eng."
+    volume: "6772-6789"
+    year: 2026
+    source: "https://doi.org/10.1109/TNSE.2026.3663098"
+
+  - type: "Journal Articles"
+    title: "Energy-Efficient UAV Deployment and Computation Offloading in Space-Air-Ground Integrated Networks."
+    authors: ['Jianshan Zhang', 'Xu Yang', 'Xing Chen', 'Xiang Chen', 'Xun Yi', 'Ibrahim Khalil', 'Dusit Niyato']
+    journal: "IEEE Trans. Veh. Technol."
+    volume: "3081-3098"
+    year: 2026
+    source: "https://doi.org/10.1109/TVT.2025.3601197"
+
+  - type: "Informal and Other Publications"
+    title: "Federated Unlearning in Edge Networks: A Survey of Fundamentals, Challenges, Practical Applications and Future Directions."
+    authors: ['Jer Shyuan Ng', 'Wathsara Daluwatta', 'Shehan Edirimannage', 'Charitha Elvitigala', 'Asitha Kottahachchi Kankanamge Don', 'Ibrahim Khalil', 'Heng Zhang', 'Dusit Niyato']
+    journal: "CoRR"
+    volume: "abs/2601.09978"
+    year: 2026
+    source: "https://arxiv.org/abs/2601.09978"
+
+  - type: "Informal and Other Publications"
+    title: "WinFLoRA: Incentivizing Client-Adaptive Aggregation in Federated LoRA under Privacy Heterogeneity."
+    authors: ['Mengsha Kou', 'Xiaoyu Xia', 'Ziqi Wang', 'Ibrahim Khalil', 'Runkun Luo', 'Jingwen Zhou', 'Minhui Xue']
+    journal: "CoRR"
+    volume: "abs/2602.01126"
+    year: 2026
+    source: "https://arxiv.org/abs/2602.01126"
+
+  - type: "Informal and Other Publications"
+    title: "Mind the Gap: Evaluating LLMs for High-Level Malicious Package Detection vs. Fine-Grained Indicator Identification."
+    authors: ['Ahmed Ryan', 'Ibrahim Khalil', 'Abdullah Al Jahid', 'Md Erfan', 'Sungbin Park', 'Akond Ashfaque Ur Rahman', 'Md. Rayhanur Rahman']
+    journal: "CoRR"
+    volume: "abs/2602.16304"
+    year: 2026
+    source: "https://arxiv.org/abs/2602.16304"
+
+  - type: "Journal Articles"
+    title: "DT-FU: Digital Twin-Driven Federated Unlearning for Resilient Vehicular Networks in the 6G Era."
+    authors: ['Wathsara Daluwatta', 'Shehan Edirimannage', 'Charitha Elvitigala', 'Ibrahim Khalil', 'Mohammed Atiquzzaman']
+    journal: "IEEE Commun. Mag."
+    volume: "48-55"
+    year: 2025
+    source: "https://doi.org/10.1109/MCOM.001.2400229"
+
+  - type: "Journal Articles"
+    title: "Remote sensing revolutionizing agriculture: Toward a new frontier."
+    authors: ['Xiaoding Wang', 'Haitao Zeng', 'Xu Yang', 'Jiwu Shu', 'Qibin Wu', 'Youxiong Que', 'Xuechao Yang', 'Xun Yi', 'Ibrahim Khalil', 'Albert Y. Zomaya']
+    journal: "Future Gener. Comput. Syst."
+    volume: "107691"
+    year: 2025
+    source: "https://doi.org/10.1016/j.future.2024.107691"
+
+  - type: "Journal Articles"
+    title: "Edge Association Strategies for Synthetic Data Empowered Hierarchical Federated Learning With Non-IID Data."
+    authors: ['Jer Shyuan Ng', 'Aditya Pribadi Kalapaaking', 'Xiaoyu Xia', 'Dusit Niyato', 'Ibrahim Khalil', 'Iqbal Gondal']
+    journal: "IEEE Internet Things J."
+    volume: "47437-47450"
+    year: 2025
+    source: "https://doi.org/10.1109/JIOT.2025.3602382"
+
+  - type: "Journal Articles"
+    title: "ZeTFRi - A Zero Trust-Based Free Rider Detection Framework for Next Generation Federated Learning Networks."
+    authors: ['Shehan Edirimannage', 'Ibrahim Khalil', 'Charitha Elvitigala', 'Wathsara Daluwatta', 'Primal Wijesekera', 'Albert Y. Zomaya']
+    journal: "IEEE J. Sel. Areas Commun."
+    volume: "1938-1953"
+    year: 2025
+    source: "https://doi.org/10.1109/JSAC.2025.3560013"
+
+  - type: "Journal Articles"
+    title: "Toward LLM-Driven Adaptive Policy Orchestration for Host-Based Intrusion Detection Systems in IoT Environments."
+    authors: ['Binod Karunanayake', 'Ibrahim Khalil', 'Xun Yi', 'Kwok-Yan Lam']
+    journal: "IEEE Netw."
+    volume: "66-73"
+    year: 2025
+    source: "https://doi.org/10.1109/MNET.2025.3579532"
+
+  - type: "Journal Articles"
+    title: "QRLaXAI: quantum representation learning and explainable AI."
+    authors: ['Asitha Kottahachchi Kankanamge Don', 'Ibrahim Khalil']
+    journal: "Quantum Mach. Intell."
+    volume: "24"
+    year: 2025
+    source: "https://doi.org/10.1007/s42484-025-00253-9"
+
+  - type: "Journal Articles"
+    title: "Exploiting Gaussian Noise Variance for Dynamic Differential Poisoning in Federated Learning."
+    authors: ['Md Tamjid Hossain', 'Shahriar Badsha', 'Hung Manh La', 'Shafkat Islam', 'Ibrahim Khalil']
+    journal: "IEEE Trans. Artif. Intell."
+    volume: "2922-2939"
+    year: 2025
+    source: "https://doi.org/10.1109/TAI.2025.3540030"
+
+  - type: "Journal Articles"
+    title: "HFedLMR: Personalized and Hierarchical Federated Learning for Consumer Healthcare IoT With Non-IID Data."
+    authors: ['Charitha Elvitigala', 'Ibrahim Khalil', 'Mohammed Atiquzzaman']
+    journal: "IEEE Trans. Consumer Electron."
+    volume: "8441-8452"
+    year: 2025
+    source: "https://doi.org/10.1109/TCE.2025.3595845"
+
+  - type: "Journal Articles"
+    title: "Lightweight Privacy-Friendly Aggregation Scheme Against Internal Attacks for Smart Grids."
+    authors: ['Fei Zhu', 'Wei Wu', 'Alsharif Abuadbba', 'Saru Kumari', 'Xu Yang', 'Ibrahim Khalil', 'Xun Yi']
+    journal: "IEEE Trans. Ind. Informatics"
+    volume: "4809-4819"
+    year: 2025
+    source: "https://doi.org/10.1109/TII.2025.3545107"
+
+  - type: "Journal Articles"
+    title: "Auditable and Verifiable Federated Learning Based on Blockchain-Enabled Decentralization."
+    authors: ['Aditya Pribadi Kalapaaking', 'Ibrahim Khalil', 'Xun Yi', 'Kwok-Yan Lam', 'Guang-Bin Huang', 'Ning Wang']
+    journal: "IEEE Trans. Neural Networks Learn. Syst."
+    volume: "102-115"
+    year: 2025
+    source: "https://doi.org/10.1109/TNNLS.2024.3407670"
+
+  - type: "Journal Articles"
+    title: "UaaS-SFL: Unlearning as a Service for Safeguarding Federated Learning."
+    authors: ['Wathsara Daluwatta', 'Ibrahim Khalil', 'Shehan Edirimannage', 'Mohammed Atiquzzaman']
+    journal: "IEEE Trans. Netw. Serv. Manag."
+    volume: "1029-1045"
+    year: 2025
+    source: "https://doi.org/10.1109/TNSM.2024.3520109"
+
+  - type: "Journal Articles"
+    title: "Q-SupCon: Quantum-Enhanced Supervised Contrastive Learning Architecture within the Representation Learning Framework."
+    authors: ['Asitha Kottahachchi Kankanamge Don', 'Ibrahim Khalil']
+    journal: "ACM Trans. Quantum Comput."
+    volume: "6:1-6:24"
+    year: 2025
+    source: "https://doi.org/10.1145/3660647"
+
+  - type: "Conference and Workshop Papers"
+    title: "TurboCache: Empowering Switch-Accelerated Key-Value Caches with Accurate and Fast Cache Updates."
+    authors: ['Xiang Chen', 'Longlong Zhu', 'Linying Zheng', 'Lingfei Cheng', 'Jianshan Zhang', 'Xu Yang', 'Dong Zhang', 'Xuan Liu', 'Xiaoming Lu', 'Xun Yi', 'Ibrahim Khalil', 'Albert Y. Zomaya', 'Haifeng Zhou', 'Chunming Wu']
+    journal: "INFOCOM"
+    volume: "1-10"
+    year: 2025
+    source: "https://doi.org/10.1109/INFOCOM55648.2025.11044585"
+
+  - type: "Conference and Workshop Papers"
+    title: "Optimizing Energy Efficiency with QoE-Awareness in Multi-Access Edge Computing."
+    authors: ['Zongchao Xie', 'Xiaoyu Xia', 'Boyun Hu', 'Ibrahim Khalil', 'Ziqi Wang', 'Guangming Cui', 'Gang Xie', 'Minhui Xue']
+    journal: "IWQoS"
+    volume: "1-10"
+    year: 2025
+    source: "https://doi.org/10.1109/IWQoS65803.2025.11143474"
+
+  - type: "Conference and Workshop Papers"
+    title: "Edge Unlearning is Not \"on Edge\"! an Adaptive Exact Unlearning System on Resource-Constrained Devices."
+    authors: ['Xiaoyu Xia', 'Ziqi Wang', 'Ruoxi Sun', 'Bowen Liu', 'Ibrahim Khalil', 'Minhui Xue']
+    journal: "SP"
+    volume: "2546-2563"
+    year: 2025
+    source: "https://doi.org/10.1109/SP61157.2025.00095"
+
+  - type: "Informal and Other Publications"
+    title: "Deep Contrastive Unlearning for Language Models."
+    authors: ['Estrid He', 'Tabinda Sarwar', 'Ibrahim Khalil', 'Xun Yi', 'Ke Wang']
+    journal: "CoRR"
+    volume: "abs/2503.14900"
+    year: 2025
+    source: "https://arxiv.org/abs/2503.14900"
+
+  - type: "Informal and Other Publications"
+    title: "Edge Association Strategies for Synthetic Data Empowered Hierarchical Federated Learning with Non-IID Data."
+    authors: ['Jer Shyuan Ng', 'Aditya Pribadi Kalapaaking', 'Xiaoyu Xia', 'Dusit Niyato', 'Ibrahim Khalil', 'Iqbal Gondal']
+    journal: "CoRR"
+    volume: "abs/2506.18259"
+    year: 2025
+    source: "https://arxiv.org/abs/2506.18259"
+
+  - type: "Informal and Other Publications"
+    title: "From Detection to Correction: Backdoor-Resilient Face Recognition via Vision-Language Trigger Detection and Noise-Based Neutralization."
+    authors: ['Farah Wahida', 'M. A. P. Chamikara', 'Yashothara Shanmugarasa', 'Mohan Baruwal Chhetri', 'Thilina Ranbaduge', 'Ibrahim Khalil']
+    journal: "CoRR"
+    volume: "abs/2508.05409"
+    year: 2025
+    source: "https://arxiv.org/abs/2508.05409"
+
+  - type: "Journal Articles"
     title: "On numerical resolution of shape optimization bi-Laplacian eigenvalue problems."
     authors: ['Abdelkrim Chakib', 'Ibrahim Khalil', 'Azeddine Sadik']
     journal: "Math. Comput. Simul."

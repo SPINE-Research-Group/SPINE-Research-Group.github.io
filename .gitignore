@@ -1,6 +1,7 @@
 # NPM
 node_modules
 npm-debug.log
+vendor/
 
 # Jekyll
 _site
@@ -20,3 +21,4 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 .idea
+

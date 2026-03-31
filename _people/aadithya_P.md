@@ -1,7 +1,7 @@
 ---
 name: "Aditya Pribadi"
 title: "Researcher"
-image: "https://media.licdn.com/dms/image/v2/C4D03AQGpRP7LBjcnXg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1658247542922?e=1746057600&v=beta&t=3jXBajvxGTZcYcyuxbNcU7M0emxvTwWN--8M75VvFVA"
+image: "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
 linkedinurl: "https://www.linkedin.com/in/adityapribadi/"
 weight: 2
 type: profile
