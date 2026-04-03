@@ -30,11 +30,15 @@ subTextLight, #slide-container {
 /* Height of carousel */
 #slide-container {
 //  height: 400px;
-//  overflow: hidden; 
-//  position: relative; 
+//  overflow: hidden;
+//  position: relative;
   display: inline-block;
 //   margin: 0;
 
+  @media (max-width: 767px) {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
 }
 
 .slide {

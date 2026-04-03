@@ -18,9 +18,30 @@
   .copyright {
     margin-top: 10px;
     font-size: 14px;
+    padding-bottom: 10px;
+    text-align: center;
     a {
       font-weight: bold;
       color: inherit;
+    }
+  }
+  .back-to-top {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    align-self: center;
+    text-align: center;
+    font-size: 14px;
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+      text-align: right;
+      align-self: flex-end;
     }
   }
   .social {

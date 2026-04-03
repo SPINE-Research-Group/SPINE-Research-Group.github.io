@@ -43,8 +43,9 @@ bodyClass: "page-home"
 <!-- People -->
 <div class="strip strip-grey">
   <div class="container pt-3 pb-3">
-    <h1 class="row pt-3">People</h1>
+    <!-- <h1 class="row pt-3">People</h1> -->
     <div class="row pt-1 pb-2" id="team-container">
+      <h1>People</h1>
       <!-- This will hold all team members, with professor first and rest shuffled -->
       {% assign featured_people = site.people | where: "type", "profile" | where: "featured", true %}
       {% for person in featured_people %}
@@ -138,7 +139,7 @@ bodyClass: "page-home"
     </div>
     <div class="row justify-content-left">
       <div class="col-auto">
-        <a class="button button-primary" href="{{ " news" | relative_url }}">View All News</a>
+        <a class="button button-primary" href="{{ "news" | relative_url }}">View All News</a>
       </div>
     </div>
   </div>

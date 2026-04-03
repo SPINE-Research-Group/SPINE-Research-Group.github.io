@@ -1,23 +1,33 @@
 .header {
   color: $white !important;
   background-color: $blue;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   // box-shadow: 0 1px 15px rgba(50, 50, 93, 0.2);
   // border-bottom: 1px solid $white-offset;
-  padding: 10px 0px;
+  padding: 0;
   .container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   &.header-absolute {
     position: fixed;
     z-index: 100;
     width: 100%;
   }
-  .logoText{
+  .logoText,
+  .logoText-mobile {
     color: $white;
     font-family: $font-family-heading;
     font-size: 20px;
@@ -26,6 +36,37 @@
     text-decoration: none !important;
     // margin-top: 30px;
     // margin-bottom: 20px;
+  }
+  .main-menu {
+    margin-left: auto;
+  }
+  .rmit-badge {
+    display: none;
+    align-self: stretch;
+    align-items: center;
+    margin-right: 20px;
+    padding: 0 16px;
+    background: $white;
+    border-radius: 0;
+    box-shadow: none;
+    text-decoration: none;
+    img {
+      display: block;
+      height: 24px;
+      width: auto;
+    }
+    @include media-breakpoint-up(md) {
+      display: inline-flex;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
   }
 }
 .lock-scroll {
