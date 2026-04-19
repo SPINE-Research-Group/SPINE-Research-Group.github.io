@@ -3,10 +3,13 @@
     <div class="footer-left">
       <span class="footer-name">{{ site.title }}</span>
       <span class="footer-tagline">{{ site.description }}</span>
-      <span class="footer-copy">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</span>
+      <span class="footer-copy d-none d-md-block">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</span>
     </div>
     <div class="footer-logo-box">
       <img class="footer-logo" src="{{ site.baseurl }}/images/logo/RMIT.png" alt="RMIT Logo">
     </div>
+  </div>
+  <div class="container footer-bottom d-md-none">
+    <span class="footer-bottom-copy">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</span>
   </div>
 </footer>
