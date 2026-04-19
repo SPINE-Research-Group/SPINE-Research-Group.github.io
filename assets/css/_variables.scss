@@ -1,0 +1,42 @@
+:root {
+  /* Backgrounds */
+  --bg-sage:        #f0f0f0;   /* upper sections — classic win95 silver */
+  --bg-cream:       #ffffff;   /* lower sections — white */
+  --bg-card:        #ffffff;
+  --bg-card-hover:  #f0f0f0;
+
+  /* Text */
+  --text-primary:   #000000;
+  --text-muted:     #555555;
+  --text-on-dark:   #ffffff;
+
+  /* Brand accents — pure black in monochrome */
+  --accent-green:   #000000;
+  --accent-amber:   #ffffff;   /* nav active underline on black bar */
+
+  /* Avatar — inverted square */
+  --avatar-bg:      #000000;
+  --avatar-text:    #ffffff;
+
+  /* Venue badge variants */
+  --badge-dark:      #000000;
+  --badge-dark-text: #ffffff;
+  --badge-mid:       #444444;
+  --badge-mid-text:  #ffffff;
+  --badge-light:     #e0e0e0;
+  --badge-light-text:#000000;
+
+  /* Link badges */
+  --link-badge-pdf-bg:   #000000;
+  --link-badge-pdf-text: #ffffff;
+  --link-badge-bg:       #e0e0e0;
+  --link-badge-text:     #000000;
+
+  /* Borders & shadows */
+  --border-card:   #000000;
+  --shadow-card:   4px 4px 0 0 #000000;  /* hard retro drop shadow */
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+}

@@ -1,0 +1,44 @@
+<section id="publications">
+  <div class="container">
+    <h2 class="section-heading">Publications</h2>
+    {% assign pub_page = site.pages | where: "title", "Publications" | first %}
+    {% if pub_page %}
+      {% assign pubs_by_year = pub_page.publications | group_by: "year" | sort: "name" | reverse %}
+      {% for year_group in pubs_by_year %}
+      <details class="pub-accordion" {% if forloop.first %}open{% endif %}>
+        <summary class="pub-year">
+          {{ year_group.name }}
+          <span class="pub-accordion-count">{{ year_group.items | size }} publications</span>
+          <span class="pub-accordion-toggle">
+            <span class="toggle-open">&#x2212;</span>
+            <span class="toggle-closed">&#x2b;</span>
+          </span>
+        </summary>
+        <div class="pub-list">
+          {% for entry in year_group.items %}
+          {% if entry.type == "Informal and Other Publications" %}
+            {% assign tier = "light" %}
+          {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
+            {% assign tier = "dark" %}
+          {% else %}
+            {% assign tier = "mid" %}
+          {% endif %}
+          <div class="pub-card">
+            <span class="pub-num">{{ forloop.index }}.</span>
+            <div class="pub-content">
+              <p>{{ entry.title }} <em>{{ entry.authors | join: ", " }}.</em></p>
+              {% if entry.source %}
+              <div class="pub-links">
+                <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Link</a>
+                <span class="venue-badge badge--{{ tier }}">{{ entry.journal }}</span>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </details>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>

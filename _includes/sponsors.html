@@ -1,0 +1,19 @@
+<section id="sponsors">
+  <div class="container">
+    <h2 class="section-heading">Grants &amp; Sponsors</h2>
+    <div class="sponsors-grid">
+      {% for grant in site.data.sponsors %}
+      <a href="{{ grant.url }}" class="sponsor-card" target="_blank" rel="noopener">
+        <div class="grant-funder">{{ grant.funder }}</div>
+        <span class="sponsor-name">{{ grant.name }}</span>
+        {% if grant.detail %}
+        <p class="grant-detail">{{ grant.detail }}</p>
+        {% endif %}
+        {% if grant.amount and grant.amount != "" %}
+        <span class="grant-amount">{{ grant.amount }}</span>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

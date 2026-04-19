@@ -1,0 +1,55 @@
+director:
+  name: "Renata Borovica-Gajic"
+  role: "Associate Professor & Lab Director, RMIT University"
+  photo: "/assets/images/people/director.jpg"
+  url: "https://renata.borovica-gajic.com"
+
+current:
+  - name: "Alice Chen"
+    role: "PhD Student (2024–)"
+    photo: "/assets/images/people/alice-chen.jpg"
+    cosupervisor: "Co-supervised with J. Smith."
+    url: "#"
+
+  - name: "Marcus Webb"
+    role: "PhD Student (2023–)"
+    photo: ""
+    cosupervisor: ""
+    url: "#"
+
+  - name: "Priya Nair"
+    role: "PhD Student (2023–)"
+    photo: ""
+    cosupervisor: "Co-supervised with L. Zhang."
+    url: "#"
+
+  - name: "James Okafor"
+    role: "Research Associate (2025–)"
+    photo: ""
+    cosupervisor: ""
+    url: "#"
+
+  - name: "Sofia Martins"
+    role: "PhD Student (2022–)"
+    photo: ""
+    cosupervisor: ""
+    url: "#"
+
+alumni:
+  - name: "David Liu"
+    degree: "PhD (2019–2024)"
+    cosupervisor: "Co-supervised with X. Wang."
+    first_position: "Google, Research Scientist."
+    url: "#"
+
+  - name: "Emma Thornton"
+    degree: "PhD (2018–2023)"
+    cosupervisor: ""
+    first_position: "Microsoft Research, Postdoctoral Researcher."
+    url: "#"
+
+  - name: "Hiro Tanaka"
+    degree: "MRes (2021–2023)"
+    cosupervisor: ""
+    first_position: "Databricks, Software Engineer."
+    url: "#"

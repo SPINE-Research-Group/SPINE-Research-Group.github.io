@@ -1,0 +1,59 @@
+<section id="home" class="section-hero">
+  <div class="container">
+    {% assign pub_page = site.pages | where: "title", "Publications" | first %}
+    {% assign pub_count = pub_page.publications | size %}
+    {% assign people_count = site.people | size %}
+    <div class="hero-grid">
+
+      <div class="hero-text">
+        <span class="eyebrow"><span class="spine-letter">S</span>ecurity - <span class="spine-letter">P</span>rivacy - <span class="spine-letter">In</span>telligence - <span class="spine-letter">E</span>dge Computing</span>
+        <h1>SPINE Research Group at RMIT</h1>
+        <p>SPINE (Security, Privacy, Intelligence, and Edge) Research Group at RMIT is a dynamic research lab dedicated to advancing the frontiers of digital exploration. Specializing in security, privacy, and intelligence, the group pioneers cutting-edge research at the intersection of technology and innovation.</p>
+        <div class="hero-cta">
+          <a href="#publications" class="btn-primary">Our Research</a>
+          <a href="#contact" class="btn-outline">Join the Lab</a>
+        </div>
+      </div>
+
+      <div class="hero-carousel" aria-label="Lab highlights">
+        <div class="hero-slides-track">
+
+        <div class="hero-slide active">
+          <div class="stats-card">
+            <div class="stat-item">
+              <span class="stat-number">{{ people_count }}</span>
+              <span class="stat-label">Lab Members</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">{{ pub_count }}+</span>
+              <span class="stat-label">Publications</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">{{ site.data.projects.size }}</span>
+              <span class="stat-label">Active Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">$2.5M+</span>
+              <span class="stat-label">Competitive Funding</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img
+            src="{{ '/images/hero-image.jpg' | relative_url }}"
+            alt="SPINE Research Group lab members"
+            class="hero-photo"
+          >
+        </div>
+        </div><!-- /.hero-slides-track -->
+
+        <div class="hero-dots" role="tablist" aria-label="Carousel slides">
+          <button class="hero-dot active" aria-label="Slide 1: Lab stats" aria-selected="true"></button>
+          <button class="hero-dot"        aria-label="Slide 2: Lab photo"  aria-selected="false"></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

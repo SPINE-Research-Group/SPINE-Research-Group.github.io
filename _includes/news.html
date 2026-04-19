@@ -1,0 +1,15 @@
+<section id="news">
+  <div class="container">
+    <h2 class="section-heading">News</h2>
+    <div class="news-list">
+      {% assign sorted_news = site.news | sort: "datetime" | reverse %}
+      {% for item in sorted_news %}
+      <div class="news-card">
+        <span class="news-num">{{ forloop.index }}.</span>
+        <span class="news-text">{{ item.title }}</span>
+        <span class="news-date">{{ item.datetime | date: "%b %-d, %Y" }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

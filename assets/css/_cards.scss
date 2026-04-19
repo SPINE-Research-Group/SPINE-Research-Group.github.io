@@ -1,0 +1,14 @@
+.card {
+  background: var(--bg-card);
+  border: 2px solid #000;
+  border-radius: 0;
+}
+
+.card--interactive {
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-card);
+    transform: translate(-2px, -2px);
+  }
+}

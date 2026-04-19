@@ -1,0 +1,95 @@
+- year: 2026
+  entries:
+    - venue: "VLDB"
+      venue_tier: "dark"
+      title: "Toward Drift-Aware Database Benchmarking."
+      authors: "G. Liu and R. Borovica-Gajic."
+      links:
+        - label: "PDF"
+          type: "pdf"
+          url: "#"
+        - label: "Link"
+          type: "link"
+          url: "#"
+        - label: "BibTex"
+          type: "link"
+          url: "#"
+
+    - venue: "ICDE"
+      venue_tier: "dark"
+      title: "Adaptive Index Selection under Workload Shift."
+      authors: "M. Webb, P. Nair and R. Borovica-Gajic."
+      links:
+        - label: "PDF"
+          type: "pdf"
+          url: "#"
+        - label: "Link"
+          type: "link"
+          url: "#"
+
+- year: 2025
+  entries:
+    - venue: "SIGMOD"
+      venue_tier: "dark"
+      title: "BenchDrift: A Framework for Evolving Database Workload Benchmarks."
+      authors: "G. Liu, M. Webb and R. Borovica-Gajic."
+      links:
+        - label: "PDF"
+          type: "pdf"
+          url: "#"
+        - label: "Link"
+          type: "link"
+          url: "#"
+        - label: "Slides"
+          type: "link"
+          url: "#"
+
+    - venue: "MLSys"
+      venue_tier: "mid"
+      title: "Learned Knob Tuning for Cloud-Native Database Engines."
+      authors: "A. Chen and R. Borovica-Gajic."
+      links:
+        - label: "PDF"
+          type: "pdf"
+          url: "#"
+        - label: "Code"
+          type: "link"
+          url: "#"
+
+- year: 2024
+  entries:
+    - venue: "VLDB"
+      venue_tier: "dark"
+      title: "AutoTune: End-to-End Automated Database Configuration."
+      authors: "D. Liu and R. Borovica-Gajic."
+      links:
+        - label: "PDF"
+          type: "pdf"
+          url: "#"
+        - label: "Link"
+          type: "link"
+          url: "#"
+        - label: "BibTex"
+          type: "link"
+          url: "#"
+
+    - venue: "AAAI"
+      venue_tier: "mid"
+      title: "Deep Cardinality Estimation with Uncertainty Quantification."
+      authors: "P. Nair, S. Martins and R. Borovica-Gajic."
+      links:
+        - label: "PDF"
+          type: "pdf"
+          url: "#"
+        - label: "Link"
+          type: "link"
+          url: "#"
+
+    - venue: "KAIS"
+      venue_tier: "light"
+      title: "A Survey of Learned Database Components: Progress and Challenges."
+      authors: "R. Borovica-Gajic, D. Liu and P. Nair."
+      links:
+        - label: "Link"
+          type: "link"
+          url: "#"

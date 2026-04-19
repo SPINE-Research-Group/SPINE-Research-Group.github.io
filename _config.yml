@@ -1,67 +1,25 @@
-baseurl: '/'
-permalink: pretty
 title: 'SPINE Research Group'
-
-logo:
-  mobile: "images/logo/logo-mobile.svg"
-  mobile_height: "32px"
-  mobile_width: "32px"
-  desktop: "images/logo/logo.svg"
-  desktop_height: "32px"
-  desktop_width: "120px"
-
-home: 
-  limit_services: 6
+description: 'Systems, Platforms, and Infrastructure for Data Engineering'
+url: 'https://spine-research-group.github.io'
+baseurl: ''
+permalink: pretty
 
 collections:
   services:
-    output: true
-    sort_by: weight
+    output: false
   team:
-    output: true
+    output: false
   people:
-    output: true
+    output: false
   news:
-    output: true
+    output: false
   publications:
-    output: true
+    output: false
   alumni:
-    output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: "team"
-    values:
-      layout: "team"
-  - scope:
-      path: ""
-      type: "grants"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "people"
-    values:
-      layout: "team"
-  - scope:
-      path: ""
-      type: "news"
-    values:
-      layout: "singlenews"
-  - scope:
-      path: ""
-      type: "publications"
-    values:
-      layout: "service"
-  - scope:
-      path: ""
-      type: "alumni"
-    values:
-      layout: "people"
+    output: false
 
 sass:
-  style: compressed # possible values: nested expanded compact compressed
+  style: compressed
 
 plugins:
   - jekyll-environment-variables
@@ -77,3 +35,4 @@ exclude:
   - LICENSE.md
   - LICENSE
   - README.md
+  - design_reference.md

@@ -1,0 +1,23 @@
+- title: "Automated Database Tuning"
+  description: "This project develops self-tuning database systems that automatically configure knobs, select indexes, and tune query execution plans using workload-driven machine learning techniques. Our work reduces the need for expert database administrators across diverse deployment environments."
+  publications:
+    - label: "VLDB'24"
+      anchor: "#publications"
+    - label: "ICDE'23"
+      anchor: "#publications"
+
+- title: "Drift-Aware Benchmarking"
+  description: "We investigate how temporal workload drift affects database benchmark validity. This project introduces new methodologies for constructing evolving benchmarks that reflect real-world data and query distributions over time, enabling more realistic performance evaluation."
+  publications:
+    - label: "VLDB'26"
+      anchor: "#publications"
+    - label: "SIGMOD'25"
+      anchor: "#publications"
+
+- title: "Learned Query Optimisation"
+  description: "We build learned components for query optimisers — including cardinality estimators and join order selectors — that leverage deep learning to outperform traditional heuristic approaches, particularly under complex multi-join queries and skewed data distributions."
+  publications:
+    - label: "ICDE'26"
+      anchor: "#publications"
+    - label: "AAAI'24"
+      anchor: "#publications"

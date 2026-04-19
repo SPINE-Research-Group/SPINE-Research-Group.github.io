@@ -1,0 +1,57 @@
+<section id="people">
+  <div class="container">
+    <h2 class="section-heading">People</h2>
+
+    {% assign director = site.people | where: "featured", true | first %}
+    {% if director %}
+    <a href="{{ director.linkedinurl }}" class="director-card" target="_blank" rel="noopener">
+      {% if director.image %}
+      <img src="{{ director.image }}" alt="{{ director.name }}" class="director-photo">
+      {% else %}
+      {% capture dir_initials %}{% assign dir_words = director.name | split: " " %}{% for w in dir_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+      <div class="initials-avatar">{{ dir_initials | truncate: 2, "" }}</div>
+      {% endif %}
+      <div class="director-info">
+        <h3>{{ director.name }}</h3>
+        <span class="role">{{ director.title }}</span>
+      </div>
+    </a>
+    {% endif %}
+
+    {% assign members = site.people | where: "type", "profile" | sort: "weight" %}
+    {% assign current_members = members | where_exp: "p", "p.featured != true" %}
+    {% if current_members.size > 0 %}
+    <p class="people-subheading">Current Members</p>
+    <div class="people-grid">
+      {% for person in current_members %}
+      <a href="{{ person.linkedinurl | default: '#' }}" class="person-card" target="_blank" rel="noopener">
+        {% if person.image and person.image != "" %}
+        <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
+        {% else %}
+        {% capture p_initials %}{% assign p_words = person.name | split: " " %}{% for w in p_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+        <div class="initials-avatar">{{ p_initials | truncate: 2, "" }}</div>
+        {% endif %}
+        <span class="person-name">{{ person.name }}</span>
+        <span class="person-role">{{ person.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% assign alumni_list = site.alumni | sort: "weight" %}
+    {% if alumni_list.size > 0 %}
+    <p class="people-subheading" style="margin-top: 48px;">Alumni</p>
+    <div class="people-grid">
+      {% for person in alumni_list %}
+      <a href="{{ person.linkedinurl | default: '#' }}" class="person-card" target="_blank" rel="noopener">
+        {% capture a_initials %}{% assign a_words = person.name | split: " " %}{% for w in a_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+        <div class="initials-avatar">{{ a_initials | truncate: 2, "" }}</div>
+        <span class="person-name">{{ person.name }}</span>
+        <span class="person-role">{{ person.title }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
