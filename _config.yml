@@ -20,7 +20,6 @@ collections:
 
 sass:
   style: compressed
-  sass_dir: assets/css
 
 plugins:
   - jekyll-environment-variables
