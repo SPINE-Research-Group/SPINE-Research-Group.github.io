@@ -20,6 +20,7 @@ collections:
 
 sass:
   style: compressed
+  implementation: sassc
 
 plugins:
   - jekyll-environment-variables
