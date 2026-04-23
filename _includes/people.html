@@ -55,3 +55,14 @@
 
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var grids = document.querySelectorAll('#people .people-grid');
+    if (grids.length > 0) {
+      var grid = grids[0];
+      for (var i = grid.children.length; i >= 0; i--) {
+        grid.appendChild(grid.children[Math.random() * i | 0]);
+      }
+    }
+  });
+</script>

@@ -22,6 +22,11 @@
       toggle.addEventListener('click', () => {
         navLinks.classList.toggle('open');
       });
+      navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+        });
+      });
     }
 
     const sections = document.querySelectorAll('section[id]');

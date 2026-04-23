@@ -89,7 +89,7 @@
   }
 
   .nav-links {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -103,9 +103,18 @@
     gap: 20px;
     overflow-y: auto;
     z-index: 199;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0s linear 0.22s;
 
     &.open {
-      display: flex;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity 0.22s ease, transform 0.22s ease;
     }
 
     li {

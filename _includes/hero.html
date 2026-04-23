@@ -19,6 +19,14 @@
         <div class="hero-slides-track">
 
         <div class="hero-slide active">
+          <img
+            src="{{ '/images/hero-image.jpg' | relative_url }}"
+            alt="SPINE Research Group lab members"
+            class="hero-photo"
+          >
+        </div>
+
+        <div class="hero-slide">
           <div class="stats-card">
             <div class="stat-item">
               <span class="stat-number">{{ people_count }}</span>
@@ -38,19 +46,11 @@
             </div>
           </div>
         </div>
-
-        <div class="hero-slide">
-          <img
-            src="{{ '/images/hero-image.jpg' | relative_url }}"
-            alt="SPINE Research Group lab members"
-            class="hero-photo"
-          >
-        </div>
         </div><!-- /.hero-slides-track -->
 
         <div class="hero-dots" role="tablist" aria-label="Carousel slides">
-          <button class="hero-dot active" aria-label="Slide 1: Lab stats" aria-selected="true"></button>
-          <button class="hero-dot"        aria-label="Slide 2: Lab photo"  aria-selected="false"></button>
+          <button class="hero-dot active" aria-label="Slide 1: Lab photo"  aria-selected="true"></button>
+          <button class="hero-dot"        aria-label="Slide 2: Lab stats"  aria-selected="false"></button>
         </div>
 
       </div>
