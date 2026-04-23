@@ -3,50 +3,50 @@
     <h2 class="section-heading">Publications</h2>
     {% assign pub_page = site.pages | where: "title", "Publications" | first %}
     {% if pub_page %}
-      {% assign all_pubs = pub_page.publications %}
+    {% assign all_pubs = pub_page.publications %}
 
-      {% comment %} 2020 and newer: one accordion per year {% endcomment %}
-      {% assign pubs_recent = all_pubs | where_exp: "p", "p.year >= 2020" %}
-      {% assign pubs_by_year_recent = pubs_recent | group_by: "year" | sort: "name" | reverse %}
-      {% for year_group in pubs_by_year_recent %}
-      <details class="pub-accordion" {% if forloop.first %}open{% endif %}>
-        <summary class="pub-year">
-          {{ year_group.name }}
-          <span class="pub-accordion-count">{{ year_group.items | size }} publications</span>
-          <span class="pub-accordion-toggle">
-            <span class="toggle-open">&#x2212;</span>
-            <span class="toggle-closed">&#x2b;</span>
-          </span>
-        </summary>
-        <div class="pub-list">
-          {% for entry in year_group.items %}
-          {% if entry.type == "Informal and Other Publications" %}
-            {% assign tier = "light" %}
-          {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
-            {% assign tier = "dark" %}
-          {% else %}
-            {% assign tier = "mid" %}
-          {% endif %}
-          <div class="pub-card">
-            <span class="pub-num">{{ forloop.index }}.</span>
-            <div class="pub-content">
-              <p>{{ entry.title }} <em>{{ entry.authors | join: ", " }}.</em></p>
-              {% if entry.source %}
-              <div class="pub-links">
-                <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Link</a>
-                <span class="venue-badge badge--{{ tier }}">{{ entry.journal }}</span>
-              </div>
-              {% endif %}
+    {% comment %} 2020 and newer: one accordion per year {% endcomment %}
+    {% assign pubs_recent = all_pubs | where_exp: "p", "p.year >= 2020" %}
+    {% assign pubs_by_year_recent = pubs_recent | group_by: "year" | sort: "name" | reverse %}
+    {% for year_group in pubs_by_year_recent %}
+    <details class="pub-accordion" {% if forloop.first %}open{% endif %}>
+      <summary class="pub-year">
+        {{ year_group.name }}
+        <span class="pub-accordion-count">{{ year_group.items | size }} publications</span>
+        <span class="pub-accordion-toggle">
+          <span class="toggle-open">&#x2212;</span>
+          <span class="toggle-closed">&#x2b;</span>
+        </span>
+      </summary>
+      <div class="pub-list">
+        {% for entry in year_group.items %}
+        {% if entry.type == "Informal and Other Publications" %}
+        {% assign tier = "light" %}
+        {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
+        {% assign tier = "dark" %}
+        {% else %}
+        {% assign tier = "mid" %}
+        {% endif %}
+        <div class="pub-card">
+          <span class="pub-num">{{ forloop.index }}.</span>
+          <div class="pub-content">
+            <p>{{ entry.title }} <em>{{ entry.authors | join: ", " }}.</em></p>
+            {% if entry.source %}
+            <div class="pub-links">
+              <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Link</a>
+              <span class="venue-badge badge--{{ tier }}">{{ entry.journal }}</span>
             </div>
+            {% endif %}
           </div>
-          {% endfor %}
         </div>
-      </details>
-      {% endfor %}
+        {% endfor %}
+      </div>
+    </details>
+    {% endfor %}
 
-      {% comment %} 2010–2019: single combined accordion {% endcomment %}
-      {% assign pubs_2010s = all_pubs | where_exp: "p", "p.year >= 2010 and p.year <= 2019" %}
-      {% if pubs_2010s.size > 0 %}
+    {% comment %} 2010–2019: single combined accordion {% endcomment %}
+    {% assign pubs_2010s = all_pubs | where_exp: "p", "p.year >= 2010" | where_exp: "p", "p.year <= 2019" %} {% if
+      pubs_2010s.size> 0 %}
       <details class="pub-accordion">
         <summary class="pub-year">
           2010 &ndash; 2019
@@ -59,11 +59,11 @@
         <div class="pub-list">
           {% for entry in pubs_2010s %}
           {% if entry.type == "Informal and Other Publications" %}
-            {% assign tier = "light" %}
+          {% assign tier = "light" %}
           {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
-            {% assign tier = "dark" %}
+          {% assign tier = "dark" %}
           {% else %}
-            {% assign tier = "mid" %}
+          {% assign tier = "mid" %}
           {% endif %}
           <div class="pub-card">
             <span class="pub-num">{{ forloop.index }}.</span>
@@ -83,43 +83,42 @@
       {% endif %}
 
       {% comment %} Pre-2010: single combined accordion {% endcomment %}
-      {% assign pubs_pre2010 = all_pubs | where_exp: "p", "p.year < 2010" %}
-      {% if pubs_pre2010.size > 0 %}
-      <details class="pub-accordion">
-        <summary class="pub-year">
-          &lt; 2010
-          <span class="pub-accordion-count">{{ pubs_pre2010 | size }} publications</span>
-          <span class="pub-accordion-toggle">
-            <span class="toggle-open">&#x2212;</span>
-            <span class="toggle-closed">&#x2b;</span>
-          </span>
-        </summary>
-        <div class="pub-list">
-          {% for entry in pubs_pre2010 %}
-          {% if entry.type == "Informal and Other Publications" %}
+      {% assign pubs_pre2010 = all_pubs | where_exp: "p", "p.year < 2010" %} {% if pubs_pre2010.size> 0 %}
+        <details class="pub-accordion">
+          <summary class="pub-year">
+            &lt; 2010
+            <span class="pub-accordion-count">{{ pubs_pre2010 | size }} publications</span>
+            <span class="pub-accordion-toggle">
+              <span class="toggle-open">&#x2212;</span>
+              <span class="toggle-closed">&#x2b;</span>
+            </span>
+          </summary>
+          <div class="pub-list">
+            {% for entry in pubs_pre2010 %}
+            {% if entry.type == "Informal and Other Publications" %}
             {% assign tier = "light" %}
-          {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
+            {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
             {% assign tier = "dark" %}
-          {% else %}
+            {% else %}
             {% assign tier = "mid" %}
-          {% endif %}
-          <div class="pub-card">
-            <span class="pub-num">{{ forloop.index }}.</span>
-            <div class="pub-content">
-              <p>{{ entry.title }} <em>{{ entry.authors | join: ", " }}.</em></p>
-              {% if entry.source %}
-              <div class="pub-links">
-                <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Link</a>
-                <span class="venue-badge badge--{{ tier }}">{{ entry.journal }}</span>
+            {% endif %}
+            <div class="pub-card">
+              <span class="pub-num">{{ forloop.index }}.</span>
+              <div class="pub-content">
+                <p>{{ entry.title }} <em>{{ entry.authors | join: ", " }}.</em></p>
+                {% if entry.source %}
+                <div class="pub-links">
+                  <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Link</a>
+                  <span class="venue-badge badge--{{ tier }}">{{ entry.journal }}</span>
+                </div>
+                {% endif %}
               </div>
-              {% endif %}
             </div>
+            {% endfor %}
           </div>
-          {% endfor %}
-        </div>
-      </details>
-      {% endif %}
+        </details>
+        {% endif %}
 
-    {% endif %}
+        {% endif %}
   </div>
 </section>
