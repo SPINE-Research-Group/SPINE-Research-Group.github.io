@@ -19,8 +19,8 @@
     {% endif %}
 
     {% assign members = site.people | where: "type", "profile" | sort: "weight" %}
-    {% assign academic_staff = members | where_exp: "p", "p.featured != true and p.weight >= 10 and p.weight <= 13" %}
-    {% assign current_members = members | where_exp: "p", "p.featured != true and p.weight != 3 and p.weight < 10" %}
+    {% assign academic_staff = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight >= 10" | where_exp: "p", "p.weight <= 13" %}
+    {% assign current_members = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight != 3" | where_exp: "p", "p.weight < 10" %}
     {% if academic_staff.size > 0 or current_members.size > 0 %}
     <p class="people-subheading">Current Members</p>
     <div class="people-grid current-members-grid">
@@ -52,7 +52,7 @@
     </div>
     {% endif %}
 
-    {% assign alumni_list = members | where_exp: "p", "p.featured != true and p.weight == 3" %}
+    {% assign alumni_list = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight == 3" %}
     {% if alumni_list.size > 0 %}
     <p class="people-subheading" style="margin-top: 48px;">Alumni</p>
     <div class="people-grid alumni-grid">
