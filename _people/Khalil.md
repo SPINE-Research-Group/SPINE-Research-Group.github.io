@@ -4,6 +4,8 @@ title: "Professor, Cloud Systems and Security."
 image: "https://i.imgur.com/WuUGRey.jpeg"
 linkedinurl: "https://www.linkedin.com/in/ibrahim-khalil-b8bb1641/"
 email: "ibrahim.khalil@rmit.edu.au"
+rmit: https://www.rmit.edu.au/profiles/k/ibrahim-khalil
+
 intro: >-
   Ibrahim Khalil is a Professor at the School of Computing Technologies at RMIT University, Melbourne, Australia. He received his Ph.D. in Computer Science from the University of Bern, Switzerland, in 2003, marking the beginning of a career that would span continents and sectors. Before his tenure at RMIT University, Khalil amassed significant experience in the tech hubs of Silicon Valley, where he worked as a software engineer focused on secure network protocols and smart network provisioning. His academic journey also includes valuable stints at EPFL the University of Bern in Switzerland, and Osaka University in Japan. A prolific contributor to the fields of Blockchain and Privacy, Khalil has led several high-profile ARC discovery and linkage grants in Australia between 2018 and 2024, alongside securing international European grants, industry grants, and a QNRF grant from Qatar. His research portfolio is diverse, encompassing Privacy, Blockchain, secure AI data analytics, distributed systems, e-health, wireless and body sensor networks, biomedical signal processing, and Quantum Computing, reflecting a broad and impactful engagement with the frontiers of computing and technology.
 weight: 2
