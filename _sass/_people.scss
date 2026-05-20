@@ -14,6 +14,10 @@
   &:hover {
     box-shadow: 6px 6px 0 0 #555;
     transform: translate(-2px, -2px);
+
+    .director-photo {
+      filter: grayscale(0%);
+    }
   }
 }
 
@@ -23,7 +27,8 @@
   object-fit: cover;
   flex-shrink: 0;
   border: 2px solid #fff;
-  // filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
 }
 
 .director-info {
@@ -86,6 +91,10 @@
   &:hover {
     background: #000;
 
+    .person-photo {
+      filter: grayscale(0%);
+    }
+
     .person-name,
     .person-role,
     .person-cosup,
@@ -100,7 +109,8 @@
   height: 80px;
   object-fit: cover;
   border: 2px solid #000;
-  // filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
 }
 
 /* Square initials avatar — no border-radius */
@@ -147,4 +157,57 @@
   font-size: 0.72rem;
   color: var(--text-muted);
   transition: color 0.15s ease;
+}
+
+.past-members-section {
+  width: 100%;
+}
+
+.past-members-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .people-subheading {
+    margin: 0;
+    margin-top: 40px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #000;
+    flex: 1;
+  }
+
+  .toggle-icon {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-left: 12px;
+    min-width: 24px;
+  }
+}
+
+.past-members-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  border: 2px solid #000;
+  box-shadow: var(--shadow-card);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

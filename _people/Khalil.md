@@ -1,27 +1,26 @@
 ---
-name: "Prof. Ibrahim Khalil"
-title: "Professor"
+name: "Ibrahim Khalil"
+title: "Professor, Cloud Systems and Security."
 image: "https://i.imgur.com/WuUGRey.jpeg"
 linkedinurl: "https://www.linkedin.com/in/ibrahim-khalil-b8bb1641/"
+email: "ibrahim.khalil@rmit.edu.au"
+intro: >-
+  Ibrahim Khalil is a Professor at the School of Computing Technologies at RMIT University, Melbourne, Australia. He received his Ph.D. in Computer Science from the University of Bern, Switzerland, in 2003, marking the beginning of a career that would span continents and sectors. Before his tenure at RMIT University, Khalil amassed significant experience in the tech hubs of Silicon Valley, where he worked as a software engineer focused on secure network protocols and smart network provisioning. His academic journey also includes valuable stints at EPFL the University of Bern in Switzerland, and Osaka University in Japan. A prolific contributor to the fields of Blockchain and Privacy, Khalil has led several high-profile ARC discovery and linkage grants in Australia between 2018 and 2024, alongside securing international European grants, industry grants, and a QNRF grant from Qatar. His research portfolio is diverse, encompassing Privacy, Blockchain, secure AI data analytics, distributed systems, e-health, wireless and body sensor networks, biomedical signal processing, and Quantum Computing, reflecting a broad and impactful engagement with the frontiers of computing and technology.
 weight: 2
 type: "profile"
 featured: true
 ---
- 
-[View Bibliography](/people/Khalil/bibliography/)
+<br/><br/>
+## Research Areas
 
+Security,  Privacy, Federated Learning,  GenAI/LLM, Blockchain, and Distributed Systems, Quantum Computing,
+
+<br/>
 ## Contact Details:
 
-**Ibrahim Khalil, PhD**  
-Professor, Cloud Systems and Security  
-School of Computing Technologies  
-RMIT University, Melbourne, Australia  
-
-- **Email:** [ibrahim.khalil@rmit.edu.au](mailto:ibrahim.khalil@rmit.edu.au)  
 - **Phone:** 0399252879  
 - **ORCID:** [0000-0001-5512-114X](https://orcid.org/0000-0001-5512-114X)  
 - **DBLP Profile:** [https://dblp.org/pers/hd/k/Khalil:Ibrahim](https://dblp.org/pers/hd/k/Khalil:Ibrahim)  
-- **LinkedIn:** [https://www.linkedin.com/in/ibrahim-khalil-b8bb1641/](https://www.linkedin.com/in/ibrahim-khalil-b8bb1641/)  
 - **ResearchGate:** [https://www.researchgate.net/profile/Ibrahim_Khalil25](https://www.researchgate.net/profile/Ibrahim_Khalil25)  
 - **Frontiers Loop:** [https://loop.frontiersin.org/people/1030674/bio](https://loop.frontiersin.org/people/1030674/bio)
 <br/><br/>
@@ -58,7 +57,7 @@ prestigious Fritz-Kutter award for the best practice oriented PhD thesis in Comp
 whole Switzerland during the academic year 2002/2003. He was interviewed by IEEE Spectrum for
 the pioneering work on ECG Steganogrpahy which was published in IEEE TMBE. The interview has
 been published in IEEE Spectrum Hiding Data in a HeartBeat. (available online:
-https://spectrum.ieee.org/tech-talk/biomedical/diagnostics/hiding-data-in-a-heartbeat)
+<https://spectrum.ieee.org/tech-talk/biomedical/diagnostics/hiding-data-in-a-heartbeat>)
 
 Ibrahim is the Chief Investigators of prestigious few ARC discovery and linkage grants
 awarded in Australia in 2017 and 2021. He is also the recipients of international European grants,
@@ -71,4 +70,7 @@ Network and Computer Applications (Elsevier), and guest edited a special issue i
 Computing. Ibrahim has also served as Technical Program Committee (TPC) members of several
 international IEEE sponsored conferences: IEEE LCN (2005, 2006, 2007, 2008), IEEE Globecom
 (2006,2007), IEEE ICC (2006,2007,2009,2010,2011), WWIC (2006, 2007, 2008).
+<br><br>
+## Research  Grants
 
+I have been awarded research grants to fund projects in the areas of LLM/GenAI, privacy, blockchain, security, and defense. These grants have facilitated exploration and advancement in these areas. Notable ones are: ARC Discovery Project **DP250100582** (2025-2027) - Privacy-Aware Intelligent Digital Twin for Secure Critical Infrastructures; ARC Discovery Project **DP220100215** (2022-2025) - Privacy-aware Smart Access Control for Internet-of-Things on Blockchain; ARC Discovery Project **DP210102761** (2021-2024)- Constraint-based Privacy Preserving BioSignal Data Management on Blockchain; ARC Discovery Project **DP18010325** (2018-2021) - Privacy-Preserving Online User Matching; ARC LP **LP240100417** (2025-2027) - Federated Fine-Tuning Framework for Secure and Collaborative GenAI Models; ARC LP **LP160101766** (2017-2020) - Privacy-preserving Cloud Data Mining-as-a-Service; **NPRP11S-1227-170135** (2019-2022) Qatar National Research Fund (QNRF) (2019-2022): Designing an Efficient Smart Contract based Blockchain System from Multi-modal Supply Chain Systems; **SPGP 2022** (2022-2023) Department of Defence Strategic Policy Grants 2022 : Australia’s trade and the threat of autonomous unmanned underwater vehicles; **SELFY EU (2022-2025) SELFY**: SELF assessment, protection & healing tools for a trustworthY and resilient CCAM.

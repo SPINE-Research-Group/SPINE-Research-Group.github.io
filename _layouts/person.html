@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.name | default: page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.intro | default: site.description | strip_html | truncate: 160 }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body class="person-page">
+  <nav class="person-nav" aria-label="Profile navigation">
+    <a class="person-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="person-back" href="{{ '/#people' | relative_url }}">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" focusable="false">
+        <path d="M15.5 5L8.5 12L15.5 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"/>
+      </svg>
+      <span>People</span>
+    </a>
+  </nav>
+
+  <main class="person-profile">
+    <div class="person-shell">
+      <aside class="person-contact-panel" aria-label="Contact information">
+        {% if page.image and page.image != "" %}
+        {% assign profile_image = page.image %}
+        {% if profile_image contains '://' %}
+        <img class="person-profile-photo" src="{{ profile_image }}" alt="{{ page.name }}">
+        {% else %}
+        <img class="person-profile-photo" src="{{ profile_image | relative_url }}" alt="{{ page.name }}">
+        {% endif %}
+        {% else %}
+        {% capture profile_initials %}{% assign profile_words = page.name | split: " " %}{% for w in profile_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+        <div class="person-profile-initials">{{ profile_initials | truncate: 2, "" }}</div>
+        {% endif %}
+
+        <div class="person-mobile-title-block">
+          <h1>{{ page.name }}</h1>
+          <p class="person-profile-role">{{ page.title }}</p>
+        </div>
+
+        <ul class="person-contact-list">
+          {% if page.email %}
+          <li>
+            <span>Email</span>
+            <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+          </li>
+          {% endif %}
+          {% if page.linkedinurl and page.linkedinurl != "#" %}
+          <li>
+            <a href="{{ page.linkedinurl }}" target="_blank" rel="noopener">LinkedIn</a>
+          </li>
+          {% endif %}
+          {% if page.personalurl and page.personalurl != "#" %}
+          <li>
+            <a href="{{ page.personalurl }}" target="_blank" rel="noopener">Personal Website</a>
+          </li>
+          {% endif %}
+          {% if page.rmit and page.rmit != "#" %}
+          <li>
+            <a href="{{ page.rmit }}" target="_blank" rel="noopener">RMIT Profile</a>
+          </li>
+          {% endif %}
+        </ul>
+      </aside>
+
+      <section class="person-main-card" aria-label="{{ page.name }} profile">
+        <div class="person-title-block">
+          <p class="person-profile-role">{{ page.title }}</p>
+          <h1>{{ page.name }}</h1>
+        </div>
+
+        {% assign person_body = content | strip %}
+        {% if page.intro %}
+        <p class="person-intro">{{ page.intro }}</p>
+        {% endif %}
+        {% if person_body != "" %}
+        <div class="person-content">
+          {{ content }}
+        </div>
+        {% endif %}
+
+        {% if page.research_image %}
+        <figure class="person-research-figure">
+          <img src="{{ page.research_image | relative_url }}" alt="{{ page.name }} research diagram">
+        </figure>
+        {% endif %}
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -85,6 +85,14 @@ publications:
     year: 2026
     source: "https://arxiv.org/abs/2602.16304"
 
+  - type: "Informal and Other Publications"
+    title: "GoAgent: Group-of-Agents Communication Topology Generation for LLM-based Multi-Agent Systems."
+    authors: ['Hongjiang Chen', 'Xin Zheng', 'Yixin Liu', 'Pengfei Jiao', 'Shiyuan Li', 'Huan Liu', 'Zhidong Zhao', 'Ziqi Xu', 'Ibrahim Khalil', 'Shirui Pan']
+    journal: "CoRR"
+    volume: "abs/2603.19677"
+    year: 2026
+    source: "https://arxiv.org/abs/2603.19677"
+
   - type: "Journal Articles"
     title: "DT-FU: Digital Twin-Driven Federated Unlearning for Resilient Vehicular Networks in the 6G Era."
     authors: ['Wathsara Daluwatta', 'Shehan Edirimannage', 'Charitha Elvitigala', 'Ibrahim Khalil', 'Mohammed Atiquzzaman']

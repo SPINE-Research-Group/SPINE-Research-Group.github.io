@@ -10,6 +10,9 @@ collections:
   team:
     output: false
   people:
+    output: true
+    permalink: /:path/
+  past_members:
     output: false
   news:
     output: false
@@ -24,6 +27,13 @@ sass:
 
 plugins:
   - jekyll-environment-variables
+
+defaults:
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: person
 
 exclude:
   - Gemfile

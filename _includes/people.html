@@ -4,7 +4,7 @@
 
     {% assign director = site.people | where: "featured", true | first %}
     {% if director %}
-    <a href="{{ director.linkedinurl }}" class="director-card" target="_blank" rel="noopener">
+    <a href="{{ director.url | relative_url }}" class="director-card">
       {% if director.image %}
       <img src="{{ director.image }}" alt="{{ director.name }}" class="director-photo">
       {% else %}
@@ -19,12 +19,26 @@
     {% endif %}
 
     {% assign members = site.people | where: "type", "profile" | sort: "weight" %}
-    {% assign current_members = members | where_exp: "p", "p.featured != true" %}
-    {% if current_members.size > 0 %}
+    {% assign academic_staff = members | where_exp: "p", "p.featured != true and p.weight >= 10 and p.weight <= 13" %}
+    {% assign current_members = members | where_exp: "p", "p.featured != true and p.weight != 3 and p.weight < 10" %}
+    {% if academic_staff.size > 0 or current_members.size > 0 %}
     <p class="people-subheading">Current Members</p>
-    <div class="people-grid">
+    <div class="people-grid current-members-grid">
+      {% for person in academic_staff %}
+      <a href="{{ person.url | relative_url }}" class="person-card pinned-person-card">
+        {% if person.image and person.image != "" %}
+        <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
+        {% else %}
+        {% capture s_initials %}{% assign s_words = person.name | split: " " %}{% for w in s_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+        <div class="initials-avatar">{{ s_initials | truncate: 2, "" }}</div>
+        {% endif %}
+        <span class="person-name">{{ person.name }}</span>
+        <span class="person-role">{{ person.title }}</span>
+      </a>
+      {% endfor %}
+
       {% for person in current_members %}
-      <a href="{{ person.linkedinurl | default: '#' }}" class="person-card" target="_blank" rel="noopener">
+      <a href="{{ person.url | relative_url }}" class="person-card shuffle-card">
         {% if person.image and person.image != "" %}
         <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
         {% else %}
@@ -38,14 +52,18 @@
     </div>
     {% endif %}
 
-    {% assign alumni_list = site.alumni | sort: "weight" %}
+    {% assign alumni_list = members | where_exp: "p", "p.featured != true and p.weight == 3" %}
     {% if alumni_list.size > 0 %}
     <p class="people-subheading" style="margin-top: 48px;">Alumni</p>
-    <div class="people-grid">
+    <div class="people-grid alumni-grid">
       {% for person in alumni_list %}
-      <a href="{{ person.linkedinurl | default: '#' }}" class="person-card" target="_blank" rel="noopener">
+      <a href="{{ person.url | relative_url }}" class="person-card">
+        {% if person.image and person.image != "" %}
+        <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
+        {% else %}
         {% capture a_initials %}{% assign a_words = person.name | split: " " %}{% for w in a_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
         <div class="initials-avatar">{{ a_initials | truncate: 2, "" }}</div>
+        {% endif %}
         <span class="person-name">{{ person.name }}</span>
         <span class="person-role">{{ person.title }}</span>
       </a>
@@ -57,12 +75,18 @@
 </section>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var grids = document.querySelectorAll('#people .people-grid');
-    if (grids.length > 0) {
-      var grid = grids[0];
-      for (var i = grid.children.length; i >= 0; i--) {
-        grid.appendChild(grid.children[Math.random() * i | 0]);
+    function shuffleGrid(grid, childSelector) {
+      if (!grid) {
+        return;
+      }
+
+      var children = childSelector ? grid.querySelectorAll(childSelector) : grid.children;
+      for (var i = children.length; i > 0; i--) {
+        grid.appendChild(children[Math.random() * i | 0]);
       }
     }
+
+    shuffleGrid(document.querySelector('#people .current-members-grid'), '.shuffle-card');
+    shuffleGrid(document.querySelector('#people .alumni-grid'));
   });
 </script>

@@ -23,7 +23,7 @@
         {% if entry.type == "Informal and Other Publications" %}
         {% assign tier = "light" %}
         {% elsif entry.type == "Conference Papers" or entry.type == "Conference and Workshop Papers" %}
-        {% assign tier = "dark" %}
+        {% assign tier = "mid" %}
         {% else %}
         {% assign tier = "mid" %}
         {% endif %}
@@ -33,7 +33,7 @@
             <p>{{ entry.title }} <em>{{ entry.authors | join: ", " }}.</em></p>
             {% if entry.source %}
             <div class="pub-links">
-              <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Link</a>
+              <a href="{{ entry.source }}" class="link-badge" target="_blank" rel="noopener">Source</a>
               <span class="venue-badge badge--{{ tier }}">{{ entry.journal }}</span>
             </div>
             {% endif %}
