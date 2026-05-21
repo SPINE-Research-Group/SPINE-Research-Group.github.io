@@ -5,7 +5,7 @@ image: "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x
 linkedinurl: "https://www.linkedin.com/in/veronika-stephanie-a454b7156/"
 email: "veronika.stephanie@rmit.edu.au"
 intro: >-
-  Veronika Stephanie is a researcher with the SPINE Research Group, contributing to research across security, privacy, intelligence, and edge computing.
+  Veronika Stephanie was a researcher with the SPINE Research Group, contributing to research across security, privacy, intelligence, and edge computing.
 weight: 3
 type: profile
 
