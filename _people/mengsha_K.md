@@ -1,11 +1,11 @@
 ---
 name: "Mengsha Kou"
 title: "PhD Student"
-image: "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
-# linkedinurl: "https://www.linkedin.com"
-email: "S4069703@student.rmit.edu.au"
+image: "images/people/mengsha.JPG"
+linkedinurl: "https://www.linkedin.com/in/mengsha-kou-06bb2b337/"
+email: "mengsha.kou@rmit.edu.au"
 intro: >-
-  Mengsha Kou is a PhD student with the SPINE Research Group, contributing to research across security, privacy, intelligence, and edge computing.
+  Mengsha Kou received the M.S. degree in Computer Science and Technology from Xidian University, China. She is currently pursuing her Ph.D. degree in Computer Science at RMIT University, Australia. Her research interests include differential privacy, edge computing, and privacy in distributed systems.
 weight: 2
 type: profile
 
