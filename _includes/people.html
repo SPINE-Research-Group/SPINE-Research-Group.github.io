@@ -41,15 +41,29 @@
     {% endif %}
 
     {% if current_members.size > 0 %}
+    {% assign current_pinned_bottom = current_members | where: "pin_to_bottom", true %}
+    {% assign current_regular = current_members | where_exp: "p", "p.pin_to_bottom != true" %}
     <p class="people-subheading">Current Members</p>
     <div class="people-grid current-members-grid">
-      {% for person in current_members %}
+      {% for person in current_regular %}
       <a href="{{ person.url | relative_url }}" class="person-card shuffle-card">
         {% if person.image and person.image != "" %}
         <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
         {% else %}
         {% capture p_initials %}{% assign p_words = person.name | split: " " %}{% for w in p_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
         <div class="initials-avatar">{{ p_initials | truncate: 2, "" }}</div>
+        {% endif %}
+        <span class="person-name">{{ person.name }}</span>
+        <span class="person-role">{{ person.title }}</span>
+      </a>
+      {% endfor %}
+      {% for person in current_pinned_bottom %}
+      <a href="{{ person.url | relative_url }}" class="person-card pinned-bottom-card">
+        {% if person.image and person.image != "" %}
+        <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
+        {% else %}
+        {% capture pb_initials %}{% assign pb_words = person.name | split: " " %}{% for w in pb_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+        <div class="initials-avatar">{{ pb_initials | truncate: 2, "" }}</div>
         {% endif %}
         <span class="person-name">{{ person.name }}</span>
         <span class="person-role">{{ person.title }}</span>
@@ -89,6 +103,13 @@
       }
     }
 
-    shuffleGrid(document.querySelector('#people .current-members-grid'), '.shuffle-card');
+    var currentMembersGrid = document.querySelector('#people .current-members-grid');
+    shuffleGrid(currentMembersGrid, '.shuffle-card');
+
+    if (currentMembersGrid) {
+      currentMembersGrid.querySelectorAll('.pinned-bottom-card').forEach(function (card) {
+        currentMembersGrid.appendChild(card);
+      });
+    }
   });
 </script>
