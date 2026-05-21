@@ -74,6 +74,29 @@
   }
 }
 
+.staff-members-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  .person-card {
+    flex: 1 1 calc((100% - 8px) / 5);
+    min-width: 180px;
+  }
+
+  @media (max-width: 1024px) {
+    .person-card {
+      flex-basis: calc((100% - 2px) / 2);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .person-card {
+      flex-basis: calc((100% - 2px) / 2);
+      min-width: 140px;
+    }
+  }
+}
+
 .person-card {
   background: var(--bg-card);
   border: none;
@@ -161,6 +184,12 @@
 
 .past-members-section {
   width: 100%;
+
+  &[open] {
+    .toggle-icon::before {
+      content: "-";
+    }
+  }
 }
 
 .past-members-toggle {
@@ -193,6 +222,22 @@
     color: var(--text-muted);
     margin-left: 12px;
     min-width: 24px;
+
+    &::before {
+      content: "+";
+    }
+  }
+}
+
+.alumni-section {
+  margin-top: 48px;
+
+  summary {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
   }
 }
 

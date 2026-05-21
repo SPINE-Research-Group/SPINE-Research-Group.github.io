@@ -1,0 +1,26 @@
+{% assign entry = include.entry %}
+{% assign authors = entry.authors | join: ", " %}
+<div class="pub-card{% if entry.dblp_unmatched %} pub-card--unmatched{% endif %}">
+  <span class="pub-num">
+    {% if entry.dblp_id %}[{{ entry.dblp_id }}]{% else %}[?]{% endif %}
+  </span>
+  <div class="pub-content">
+    <p class="pub-authors">{{ authors }}:</p>
+    <p class="pub-citation">
+      {% if entry.source %}
+      <a class="pub-title-link" href="{{ entry.source }}" target="_blank" rel="noopener">
+        <strong>{{ entry.title }}</strong>
+      </a>
+      {% else %}
+      <strong>{{ entry.title }}</strong>
+      {% endif %}
+      {% if entry.citation %}
+      <span class="pub-venue">{{ entry.citation }}</span>
+      {% else %}
+      <span class="pub-venue">
+        {{ entry.journal }}{% if entry.volume %} {{ entry.volume }}{% endif %}{% if entry.number %}({{ entry.number }}){% endif %}{% if entry.pages %}: {{ entry.pages }}{% endif %} ({{ entry.year }})
+      </span>
+      {% endif %}
+    </p>
+  </div>
+</div>

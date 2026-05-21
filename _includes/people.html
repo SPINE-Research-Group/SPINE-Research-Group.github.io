@@ -19,13 +19,14 @@
     {% endif %}
 
     {% assign members = site.people | where: "type", "profile" | sort: "weight" %}
-    {% assign academic_staff = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight >= 10" | where_exp: "p", "p.weight <= 13" %}
+    {% assign staff_members = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight >= 10" %}
     {% assign current_members = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight != 3" | where_exp: "p", "p.weight < 10" %}
-    {% if academic_staff.size > 0 or current_members.size > 0 %}
-    <p class="people-subheading">Current Members</p>
-    <div class="people-grid current-members-grid">
-      {% for person in academic_staff %}
-      <a href="{{ person.url | relative_url }}" class="person-card pinned-person-card">
+
+    {% if staff_members.size > 0 %}
+    <p class="people-subheading">Staff Members</p>
+    <div class="people-grid staff-members-grid">
+      {% for person in staff_members %}
+      <a href="{{ person.url | relative_url }}" class="person-card">
         {% if person.image and person.image != "" %}
         <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
         {% else %}
@@ -36,7 +37,12 @@
         <span class="person-role">{{ person.title }}</span>
       </a>
       {% endfor %}
+    </div>
+    {% endif %}
 
+    {% if current_members.size > 0 %}
+    <p class="people-subheading">Current Members</p>
+    <div class="people-grid current-members-grid">
       {% for person in current_members %}
       <a href="{{ person.url | relative_url }}" class="person-card shuffle-card">
         {% if person.image and person.image != "" %}
@@ -54,21 +60,26 @@
 
     {% assign alumni_list = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight == 3" %}
     {% if alumni_list.size > 0 %}
-    <p class="people-subheading" style="margin-top: 48px;">Alumni</p>
-    <div class="people-grid alumni-grid">
-      {% for person in alumni_list %}
-      <a href="{{ person.url | relative_url }}" class="person-card">
-        {% if person.image and person.image != "" %}
-        <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
-        {% else %}
-        {% capture a_initials %}{% assign a_words = person.name | split: " " %}{% for w in a_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
-        <div class="initials-avatar">{{ a_initials | truncate: 2, "" }}</div>
-        {% endif %}
-        <span class="person-name">{{ person.name }}</span>
-        <span class="person-role">{{ person.title }}</span>
-      </a>
-      {% endfor %}
-    </div>
+    <details class="past-members-section alumni-section">
+      <summary class="past-members-toggle">
+        <span class="people-subheading">Alumni</span>
+        <span class="toggle-icon" aria-hidden="true"></span>
+      </summary>
+      <div class="people-grid alumni-grid">
+        {% for person in alumni_list %}
+        <a href="{{ person.url | relative_url }}" class="person-card">
+          {% if person.image and person.image != "" %}
+          <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
+          {% else %}
+          {% capture a_initials %}{% assign a_words = person.name | split: " " %}{% for w in a_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
+          <div class="initials-avatar">{{ a_initials | truncate: 2, "" }}</div>
+          {% endif %}
+          <span class="person-name">{{ person.name }}</span>
+          <span class="person-role">{{ person.title }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </details>
     {% endif %}
 
   </div>
