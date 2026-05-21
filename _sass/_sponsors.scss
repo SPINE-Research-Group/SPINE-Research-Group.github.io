@@ -35,7 +35,9 @@
 
     .grant-funder,
     .sponsor-name,
+    .grant-meta,
     .grant-detail,
+    .grant-investigators,
     .grant-amount {
       color: #fff;
     }
@@ -61,12 +63,34 @@
   transition: color 0.15s ease;
 }
 
+.grant-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
 .grant-detail {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.5;
   flex: 1;
+  transition: color 0.15s ease;
+}
+
+.grant-investigators {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
   transition: color 0.15s ease;
 }
 

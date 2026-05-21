@@ -6,8 +6,21 @@
       <a href="{{ grant.url }}" class="sponsor-card" target="_blank" rel="noopener">
         <div class="grant-funder">{{ grant.funder }}</div>
         <span class="sponsor-name">{{ grant.name }}</span>
+        {% if grant.years or grant.status %}
+        <div class="grant-meta">
+          {% if grant.years %}
+          <span>{{ grant.years }}</span>
+          {% endif %}
+          {% if grant.status %}
+          <span>{{ grant.status }}</span>
+          {% endif %}
+        </div>
+        {% endif %}
         {% if grant.detail %}
         <p class="grant-detail">{{ grant.detail }}</p>
+        {% endif %}
+        {% if grant.investigators %}
+        <p class="grant-investigators">{{ grant.investigators }}</p>
         {% endif %}
         {% if grant.amount and grant.amount != "" %}
         <span class="grant-amount">{{ grant.amount }}</span>

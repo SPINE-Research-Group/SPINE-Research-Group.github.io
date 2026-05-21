@@ -182,55 +182,14 @@
   transition: color 0.15s ease;
 }
 
-.past-members-section {
-  width: 100%;
+.alumni-section {
+  margin-top: 48px;
 
   &[open] {
     .toggle-icon::before {
       content: "-";
     }
   }
-}
-
-.past-members-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: opacity 0.15s ease;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  .people-subheading {
-    margin: 0;
-    margin-top: 40px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #000;
-    flex: 1;
-  }
-
-  .toggle-icon {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    margin-left: 12px;
-    min-width: 24px;
-
-    &::before {
-      content: "+";
-    }
-  }
-}
-
-.alumni-section {
-  margin-top: 48px;
 
   summary {
     list-style: none;
@@ -241,18 +200,71 @@
   }
 }
 
-.past-members-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
+.alumni-toggle-button {
+  width: 100%;
+  background: #e0e0e0;
   border: 2px solid #000;
   box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
+  &:hover {
+    background: #d5d5d5;
+    box-shadow: 6px 6px 0 0 #555;
+    transform: translate(-2px, -2px);
+  }
+
+  .toggle-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-left: 12px;
+
+    &::before {
+      content: "+";
+    }
+  }
+}
+
+.alumni-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #000;
+  box-shadow: var(--shadow-card);
+  list-style: none;
+  background: #000;
+
+  li {
+    background: var(--bg-card);
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    padding: 14px 16px;
+    overflow-wrap: anywhere;
   }
 
   @media (max-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
+}
+
+.alumni-page-list {
+  margin-top: 24px;
 }

@@ -20,7 +20,7 @@
 
     {% assign members = site.people | where: "type", "profile" | sort: "weight" %}
     {% assign staff_members = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight >= 10" %}
-    {% assign current_members = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight != 3" | where_exp: "p", "p.weight < 10" %}
+    {% assign current_members = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight < 10" %}
 
     {% if staff_members.size > 0 %}
     <p class="people-subheading">Staff Members</p>
@@ -58,27 +58,19 @@
     </div>
     {% endif %}
 
-    {% assign alumni_list = members | where_exp: "p", "p.featured != true" | where_exp: "p", "p.weight == 3" %}
+    {% assign alumni_page = site.pages | where: "path", "alumni.md" | first %}
+    {% assign alumni_list = alumni_page.alumni %}
     {% if alumni_list.size > 0 %}
-    <details class="past-members-section alumni-section">
-      <summary class="past-members-toggle">
-        <span class="people-subheading">Alumni</span>
+    <details class="alumni-section">
+      <summary class="alumni-toggle-button">
+        <span>Alumni</span>
         <span class="toggle-icon" aria-hidden="true"></span>
       </summary>
-      <div class="people-grid alumni-grid">
-        {% for person in alumni_list %}
-        <a href="{{ person.url | relative_url }}" class="person-card">
-          {% if person.image and person.image != "" %}
-          <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
-          {% else %}
-          {% capture a_initials %}{% assign a_words = person.name | split: " " %}{% for w in a_words %}{{ w | slice: 0, 1 | upcase }}{% endfor %}{% endcapture %}
-          <div class="initials-avatar">{{ a_initials | truncate: 2, "" }}</div>
-          {% endif %}
-          <span class="person-name">{{ person.name }}</span>
-          <span class="person-role">{{ person.title }}</span>
-        </a>
+      <ul class="alumni-list alumni-home-list">
+        {% for name in alumni_list %}
+        <li>{{ name }}</li>
         {% endfor %}
-      </div>
+      </ul>
     </details>
     {% endif %}
 
@@ -98,6 +90,5 @@
     }
 
     shuffleGrid(document.querySelector('#people .current-members-grid'), '.shuffle-card');
-    shuffleGrid(document.querySelector('#people .alumni-grid'));
   });
 </script>
