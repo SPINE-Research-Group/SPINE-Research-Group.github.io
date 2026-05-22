@@ -7,7 +7,6 @@ email: "S4191081@student.rmit.edu.au"
 intro: >-
   Nipuna Weerasekara is with the SPINE Research Group, contributing to research across security, privacy, intelligence, and edge computing.
 weight: 1
-pin_to_bottom: true
 type: profile
 
 ---
