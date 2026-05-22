@@ -58,7 +58,7 @@
       </a>
       {% endfor %}
       {% for person in current_pinned_bottom %}
-      <a href="{{ person.url | relative_url }}" class="person-card pinned-bottom-card">
+      <a href="{{ person.url | relative_url }}" class="person-card">
         {% if person.image and person.image != "" %}
         <img src="{{ person.image }}" alt="{{ person.name }}" class="person-photo">
         {% else %}
@@ -103,13 +103,6 @@
       }
     }
 
-    var currentMembersGrid = document.querySelector('#people .current-members-grid');
-    shuffleGrid(currentMembersGrid, '.shuffle-card');
-
-    if (currentMembersGrid) {
-      currentMembersGrid.querySelectorAll('.pinned-bottom-card').forEach(function (card) {
-        currentMembersGrid.appendChild(card);
-      });
-    }
+    shuffleGrid(document.querySelector('#people .current-members-grid'), '.shuffle-card');
   });
 </script>

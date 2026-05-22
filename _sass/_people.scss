@@ -97,26 +97,6 @@
   }
 }
 
-.current-members-grid {
-  .pinned-bottom-card {
-    grid-column: 1 / -1;
-    justify-self: end;
-    width: calc((100% - 8px) / 5);
-  }
-
-  @media (max-width: 1024px) {
-    .pinned-bottom-card {
-      width: calc((100% - 4px) / 3);
-    }
-  }
-
-  @media (max-width: 640px) {
-    .pinned-bottom-card {
-      width: calc((100% - 2px) / 2);
-    }
-  }
-}
-
 .person-card {
   background: var(--bg-card);
   border: none;
