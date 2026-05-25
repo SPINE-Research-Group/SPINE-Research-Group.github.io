@@ -1,3 +1,16 @@
+.contact-subheading {
+  margin-top: 0;
+  margin-bottom: 40px;
+  max-width: 70ch;
+  color: var(--text-muted);
+}
+
+#contact {
+  .section-heading {
+    margin-bottom: 12px;
+  }
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
