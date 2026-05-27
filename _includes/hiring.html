@@ -1,0 +1,63 @@
+{% assign phd_total = 0 %}
+{% assign postdoc_total = 0 %}
+{% for project in site.data.hiring %}
+  {% for role in project.roles %}
+    {% if role.title == "PhD" %}
+      {% assign phd_total = phd_total | plus: role.count %}
+    {% elsif role.title == "Postdoc" %}
+      {% assign postdoc_total = postdoc_total | plus: role.count %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<section id="hiring" class="hiring-home">
+  <div class="container">
+    <div class="hiring-home-header">
+      <div>
+        <span class="hiring-eyebrow">Open positions</span>
+        <h2 class="hiring-heading">We are Hiring</h2>
+      </div>
+      <a class="hiring-explore" href="{{ '/hiring/' | relative_url }}">
+        <span>Explore vacancies</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" focusable="false">
+          <path d="M5 12H18M13 6L19 12L13 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hiring-summary-grid" aria-label="Hiring summary">
+      <div class="hiring-summary-card">
+        <span>{{ phd_total }}</span>
+        <p>PhD openings</p>
+      </div>
+      <div class="hiring-summary-card">
+        <span>{{ postdoc_total }}</span>
+        <p>Postdoc openings</p>
+      </div>
+      <div class="hiring-summary-card">
+        <span>{{ site.data.hiring | size }}</span>
+        <p>Funded projects</p>
+      </div>
+    </div>
+
+    <div class="hiring-preview-grid">
+      {% for project in site.data.hiring %}
+      <a class="hiring-preview-card" href="{{ '/hiring/' | relative_url }}#{{ project.name | slugify }}">
+        <div class="hiring-preview-topline">
+          <span>{{ project.funder }}</span>
+          {% if project.years %}
+          <span>{{ project.years }}</span>
+          {% endif %}
+        </div>
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.detail }}</p>
+        <div class="hiring-role-badges" aria-label="Available roles">
+          {% for role in project.roles %}
+          <span>{{ role.count }} {{ role.title }}</span>
+          {% endfor %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

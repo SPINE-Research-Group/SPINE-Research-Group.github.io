@@ -1,0 +1,43 @@
+- name: "LP250200550 Linkage Projects"
+  detail: "Privacy Aware Secure Quantum Machine Learning Platform."
+  summary: "This project aims to improve the security and privacy of quantum artificial intelligence systems by developing a safe and privacy-focused framework for quantum federated learning. It expects to create new knowledge by combining ideas from quantum computing and secure distributed learning. The expected outcomes include better models for quantum threats, new methods to protect private data, and systems that explain how quantum decisions are made. This work helps Australia safely use quantum technology in areas like health and finance, reduce energy use, and support growth in the emerging quantum security sector."
+  funder: "Australian Research Council"
+  years: "2026-TBC"
+  url: "https://dataportal.arc.gov.au/NCGP/Web/Grant/Grant/LP250200550"
+  roles:
+    - title: "PhD"
+      count: 3
+      apply_subject: "PhD application - LP250200550 Linkage Projects"
+    - title: "Postdoc"
+      count: 1
+      apply_subject: "Postdoc application - LP250200550 Linkage Projects"
+
+- name: "DP250100582 Discovery Projects"
+  detail: "Privacy-Aware Intelligent Digital Twin for Secure Critical Infrastructures."
+  summary: "This project aims to address system privacy, trustworthiness, and efficient resource management within Digital Twins-based critical infrastructure. It expects to advance new knowledge in the area of intelligent systems and cybersecurity in the context of Digital Twins-based applications in smart critical infrastructures. Expected outcomes include an efficient, intelligent Digital Twin that provides data privacy and integrity by utilizing encryption techniques, machine learning techniques, and blockchain. It is expected that the outcomes of this project will benefit Australian Critical Infrastructures by providing the system with cost-efficiency and privacy, while increasing its trustworthiness and quality of services."
+  funder: "Australian Research Council"
+  years: "2025-2028"
+  status: "Active"
+  url: "https://dataportal.arc.gov.au/NCGP/Web/Grant/Grant/DP250100582"
+  roles:
+    - title: "PhD"
+      count: 3
+      apply_subject: "PhD application - DP250100582 Discovery Projects"
+    - title: "Postdoc"
+      count: 1
+      apply_subject: "Postdoc application - DP250100582 Discovery Projects"
+
+- name: "LP240100417 Linkage Projects"
+  detail: "Federated Fine-Tuning Framework for Secure and Collaborative GenAI Models."
+  summary: "This project aims to develop a federated fine-tuning framework for Large Language Models (LLMs) and Multimodal Foundation Models (MFMs), utilizing distributed and private data. By incorporating a strong focus on security and privacy, this project seeks to generate new knowledge in the area of federated fine-tuning techniques for LLMs/MFMs. Expected outcomes of this project include the creation of a versatile framework for federated fine-tuning that prioritizes privacy and security. The project's advancements will significantly benefit sectors like healthcare, energy, and finance, by offering reliable, secure, and privacy-assured solutions through Generative AI to enhance Australia's workforce capabilities and drive economic growth."
+  funder: "Australian Research Council"
+  years: "2025-2028"
+  status: "Active"
+  url: "https://dataportal.arc.gov.au/NCGP/Web/Grant/Grant/LP240100417"
+  roles:
+    - title: "PhD"
+      count: 2
+      apply_subject: "PhD application - LP240100417 Linkage Projects"
+    - title: "Postdoc"
+      count: 1
+      apply_subject: "Postdoc application - LP240100417 Linkage Projects"
