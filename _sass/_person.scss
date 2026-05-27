@@ -260,7 +260,10 @@
 .person-research-viewer {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 9999;
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   gap: 14px;
@@ -310,7 +313,7 @@
   min-height: 0;
   overflow: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
@@ -322,6 +325,7 @@
   touch-action: pan-x pan-y;
 
   &.is-zoomed {
+    align-items: flex-start;
     justify-content: flex-start;
     cursor: grab;
   }
@@ -334,12 +338,15 @@
 
 .person-research-expanded-image {
   display: block;
-  width: 100%;
+  width: auto;
   max-width: 100%;
+  max-height: 100%;
   height: auto;
   margin: auto;
   background: #fff;
   transform-origin: top left;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 @keyframes person-rise {

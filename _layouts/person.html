@@ -94,188 +94,38 @@
             </span>
           </button>
         </figure>
-
-        <div class="person-research-viewer" id="person-research-viewer" role="dialog" aria-modal="true" aria-label="{{ page.name }} research diagram" hidden>
-          <div class="person-research-toolbar" aria-label="Research diagram controls">
-            <button class="person-research-tool" type="button" data-research-zoom-out aria-label="Zoom out">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">
-                <path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
-              </svg>
-            </button>
-            <button class="person-research-tool" type="button" data-research-zoom-reset aria-label="Reset zoom">
-              <span aria-hidden="true">1:1</span>
-            </button>
-            <button class="person-research-tool" type="button" data-research-zoom-in aria-label="Zoom in">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">
-                <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
-              </svg>
-            </button>
-            <button class="person-research-tool" type="button" data-research-close aria-label="Close diagram">
-              <svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">
-                <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
-              </svg>
-            </button>
-          </div>
-          <div class="person-research-canvas" data-research-canvas>
-            <img class="person-research-expanded-image" src="{{ page.research_image | relative_url }}" alt="{{ page.name }} research diagram">
-          </div>
-        </div>
         {% endif %}
       </section>
     </div>
   </main>
   {% if page.research_image %}
-  <script>
-    (function () {
-      var trigger = document.querySelector('.person-research-trigger');
-      var viewer = document.getElementById('person-research-viewer');
-      if (!trigger || !viewer) return;
+  <div class="person-research-viewer" id="person-research-viewer" role="dialog" aria-modal="true" aria-label="{{ page.name }} research diagram" hidden>
+    <div class="person-research-toolbar" aria-label="Research diagram controls">
+      <button class="person-research-tool" type="button" data-research-zoom-out aria-label="Zoom out">
+        <svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">
+          <path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
+        </svg>
+      </button>
+      <button class="person-research-tool" type="button" data-research-zoom-reset aria-label="Reset zoom">
+        <span aria-hidden="true">1:1</span>
+      </button>
+      <button class="person-research-tool" type="button" data-research-zoom-in aria-label="Zoom in">
+        <svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">
+          <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
+        </svg>
+      </button>
+      <button class="person-research-tool" type="button" data-research-close aria-label="Close diagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" focusable="false" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/>
+        </svg>
+      </button>
+    </div>
+    <div class="person-research-canvas" data-research-canvas>
+      <img class="person-research-expanded-image" src="{{ page.research_image | relative_url }}" alt="{{ page.name }} research diagram" draggable="false">
+    </div>
+  </div>
 
-      var canvas = viewer.querySelector('[data-research-canvas]');
-      var image = viewer.querySelector('.person-research-expanded-image');
-      var closeButton = viewer.querySelector('[data-research-close]');
-      var zoomInButton = viewer.querySelector('[data-research-zoom-in]');
-      var zoomOutButton = viewer.querySelector('[data-research-zoom-out]');
-      var resetButton = viewer.querySelector('[data-research-zoom-reset]');
-      var controls = Array.prototype.slice.call(viewer.querySelectorAll('button'));
-      var previousFocus = null;
-      var zoom = 1;
-      var dragging = false;
-      var dragged = false;
-      var dragStartX = 0;
-      var dragStartY = 0;
-      var scrollStartLeft = 0;
-      var scrollStartTop = 0;
-
-      function clamp(value) {
-        return Math.max(1, Math.min(4, value));
-      }
-
-      function setZoom(value) {
-        var oldZoom = zoom;
-        zoom = clamp(value);
-        image.style.width = (zoom * 100) + '%';
-        image.style.maxWidth = zoom === 1 ? '100%' : 'none';
-        canvas.classList.toggle('is-zoomed', zoom > 1);
-
-        if (oldZoom !== zoom) {
-          canvas.scrollLeft = (canvas.scrollLeft + canvas.clientWidth / 2) * (zoom / oldZoom) - canvas.clientWidth / 2;
-          canvas.scrollTop = (canvas.scrollTop + canvas.clientHeight / 2) * (zoom / oldZoom) - canvas.clientHeight / 2;
-        }
-      }
-
-      function openViewer() {
-        previousFocus = document.activeElement;
-        viewer.hidden = false;
-        document.body.classList.add('person-research-viewer-open');
-        setZoom(1);
-        requestAnimationFrame(function () {
-          closeButton.focus();
-          canvas.scrollLeft = 0;
-          canvas.scrollTop = 0;
-        });
-        document.addEventListener('keydown', onKeyDown);
-      }
-
-      function closeViewer() {
-        viewer.hidden = true;
-        document.body.classList.remove('person-research-viewer-open');
-        document.removeEventListener('keydown', onKeyDown);
-        if (previousFocus && typeof previousFocus.focus === 'function') {
-          previousFocus.focus();
-        }
-      }
-
-      function onKeyDown(event) {
-        if (event.key === 'Escape') {
-          closeViewer();
-          return;
-        }
-
-        if (event.key === '+' || event.key === '=') {
-          event.preventDefault();
-          setZoom(zoom + 0.5);
-          return;
-        }
-
-        if (event.key === '-') {
-          event.preventDefault();
-          setZoom(zoom - 0.5);
-          return;
-        }
-
-        if (event.key === '0') {
-          event.preventDefault();
-          setZoom(1);
-          return;
-        }
-
-        if (event.key === 'Tab' && controls.length) {
-          var first = controls[0];
-          var last = controls[controls.length - 1];
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
-        }
-      }
-
-      trigger.addEventListener('click', openViewer);
-      closeButton.addEventListener('click', closeViewer);
-      zoomInButton.addEventListener('click', function () { setZoom(zoom + 0.5); });
-      zoomOutButton.addEventListener('click', function () { setZoom(zoom - 0.5); });
-      resetButton.addEventListener('click', function () { setZoom(1); });
-
-      viewer.addEventListener('click', function (event) {
-        if (event.target === viewer) closeViewer();
-      });
-
-      image.addEventListener('click', function () {
-        if (dragged) {
-          dragged = false;
-          return;
-        }
-        setZoom(zoom >= 4 ? 1 : zoom + 0.5);
-      });
-
-      canvas.addEventListener('wheel', function (event) {
-        if (!event.ctrlKey && !event.metaKey) return;
-        event.preventDefault();
-        setZoom(zoom + (event.deltaY < 0 ? 0.25 : -0.25));
-      }, { passive: false });
-
-      canvas.addEventListener('pointerdown', function (event) {
-        if (zoom <= 1 || event.button !== 0) return;
-        dragging = true;
-        dragged = false;
-        dragStartX = event.clientX;
-        dragStartY = event.clientY;
-        scrollStartLeft = canvas.scrollLeft;
-        scrollStartTop = canvas.scrollTop;
-        canvas.setPointerCapture(event.pointerId);
-        canvas.classList.add('is-dragging');
-      });
-
-      canvas.addEventListener('pointermove', function (event) {
-        if (!dragging) return;
-        var deltaX = event.clientX - dragStartX;
-        var deltaY = event.clientY - dragStartY;
-        if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) dragged = true;
-        canvas.scrollLeft = scrollStartLeft - deltaX;
-        canvas.scrollTop = scrollStartTop - deltaY;
-      });
-
-      canvas.addEventListener('pointerup', function (event) {
-        if (!dragging) return;
-        dragging = false;
-        canvas.releasePointerCapture(event.pointerId);
-        canvas.classList.remove('is-dragging');
-      });
-    })();
-  </script>
+  <script src="{{ '/assets/js/person-research-viewer.js' | relative_url }}"></script>
   {% endif %}
 </body>
 </html>
