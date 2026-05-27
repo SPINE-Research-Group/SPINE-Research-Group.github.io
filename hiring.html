@@ -16,57 +16,55 @@ nav_active: hiring
 
 <section class="hiring-detail" aria-labelledby="hiring-title">
   <div class="hiring-detail-shell">
-    <div class="hiring-detail-main">
-      <div class="hiring-detail-title">
-        <div>
-          <p class="person-profile-role">SPINE Research Group</p>
-          <h1 id="hiring-title">We are hiring for following projects</h1>
-          <p class="hiring-detail-intro">PhD and postdoctoral positions across ARC-funded security, privacy, intelligence, and edge computing projects.</p>
-        </div>
-        <div class="hiring-title-count" aria-label="{{ hiring_total }} open roles">
-          <span>{{ hiring_total }}</span>
-          <p>Open roles</p>
-        </div>
+    <div class="hiring-detail-title">
+      <div>
+        <p class="person-profile-role">SPINE Research Group</p>
+        <h1 id="hiring-title">We are hiring for following projects</h1>
+        <p class="hiring-detail-intro">PhD and postdoctoral positions across ARC-funded security, privacy, intelligence, and edge computing projects.</p>
       </div>
+      <div class="hiring-title-count" aria-label="{{ hiring_total }} open roles">
+        <span>{{ hiring_total }}</span>
+        <p>Open roles</p>
+      </div>
+    </div>
 
-      <div class="hiring-vacancy-list">
-        {% for project in site.data.hiring %}
-        <article class="hiring-vacancy-card" id="{{ project.name | slugify }}">
-          <div class="hiring-vacancy-header">
+    <div class="hiring-vacancy-list">
+      {% for project in site.data.hiring %}
+      <article class="hiring-vacancy-card" id="{{ project.name | slugify }}">
+        <div class="hiring-vacancy-header">
+          <div>
+            <span class="hiring-vacancy-funder">{{ project.funder }} - {{ project.name }}</span>
+            <h2>{{ project.detail }}</h2>
+          </div>
+          <div class="hiring-vacancy-meta">
+            {% if project.years %}
+            <span>{{ project.years }}</span>
+            {% endif %}
+            {% if project.status %}
+            <span>{{ project.status }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if project.summary %}
+        <p class="hiring-vacancy-summary">{{ project.summary }}</p>
+        {% endif %}
+
+        <div class="hiring-role-grid">
+          {% for role in project.roles %}
+          <div class="hiring-role-card">
             <div>
-              <span class="hiring-vacancy-funder">{{ project.funder }} - {{ project.name }}</span>
-              <h2>{{ project.detail }}</h2>
+              <span class="hiring-role-count">{{ role.count }}</span>
+              <h3>{{ role.title }} {% if role.count == 1 %}position{% else %}positions{% endif %}</h3>
             </div>
-            <div class="hiring-vacancy-meta">
-              {% if project.years %}
-              <span>{{ project.years }}</span>
-              {% endif %}
-              {% if project.status %}
-              <span>{{ project.status }}</span>
-              {% endif %}
-            </div>
+            <a class="hiring-apply" href="mailto:ibrahim.khalil@rmit.edu.au?subject={{ role.apply_subject | uri_escape }}">Apply</a>
           </div>
+          {% endfor %}
+        </div>
 
-          {% if project.summary %}
-          <p class="hiring-vacancy-summary">{{ project.summary }}</p>
-          {% endif %}
-
-          <div class="hiring-role-grid">
-            {% for role in project.roles %}
-            <div class="hiring-role-card">
-              <div>
-                <span class="hiring-role-count">{{ role.count }}</span>
-                <h3>{{ role.title }} {% if role.count == 1 %}position{% else %}positions{% endif %}</h3>
-              </div>
-              <a class="hiring-apply" href="mailto:ibrahim.khalil@rmit.edu.au?subject={{ role.apply_subject | uri_escape }}">Apply</a>
-            </div>
-            {% endfor %}
-          </div>
-
-          <a class="hiring-grant-link" href="{{ project.url }}" target="_blank" rel="noopener">View grant details ↗</a>
-        </article>
-        {% endfor %}
-      </div>
+        <a class="hiring-grant-link" href="{{ project.url }}" target="_blank" rel="noopener">View grant details ↗</a>
+      </article>
+      {% endfor %}
     </div>
   </div>
 </section>

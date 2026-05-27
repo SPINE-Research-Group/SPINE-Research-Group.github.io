@@ -191,15 +191,12 @@
   width: calc(100% - 32px);
   max-width: 1180px;
   margin: 0 auto;
+  display: grid;
+  gap: 24px;
   animation: person-rise 0.5s ease both;
 }
 
-.hiring-detail-main {
-  background: #fff;
-  border: 2px solid #000;
-  // box-shadow: var(--shadow-card);
-}
-
+.hiring-detail-title,
 .hiring-vacancy-card {
   background: #fff;
   border: 2px solid #000;
@@ -228,15 +225,8 @@
   }
 }
 
-.hiring-detail-main {
-  padding: clamp(24px, 5vw, 56px);
-  overflow: hidden;
-}
-
 .hiring-detail-title {
-  border-bottom: 3px solid #000;
-  padding-bottom: 24px;
-  margin-bottom: 28px;
+  padding: clamp(24px, 5vw, 56px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) 150px;
   gap: 24px;
@@ -422,7 +412,7 @@
     padding: 36px 0 64px;
   }
 
-  .hiring-detail-main,
+  .hiring-detail-title,
   .hiring-vacancy-card {
     padding: 20px;
   }
