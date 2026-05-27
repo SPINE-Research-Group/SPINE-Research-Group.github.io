@@ -49,8 +49,8 @@
           <span>{{ project.years }}</span>
           {% endif %}
         </div>
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.detail }}</p>
+        <h3>{{ project.detail }}</h3>
+        <p>{{ project.name }}</p>
         <div class="hiring-role-badges" aria-label="Available roles">
           {% for role in project.roles %}
           <span>{{ role.count }} {{ role.title }}</span>
