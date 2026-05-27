@@ -222,6 +222,126 @@
   }
 }
 
+.person-research-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  cursor: zoom-in;
+
+  img {
+    display: block;
+  }
+
+  &:focus-visible {
+    outline: 4px solid #000;
+    outline-offset: 4px;
+  }
+}
+
+.person-research-trigger-icon {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0 0 #000;
+  pointer-events: none;
+}
+
+.person-research-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.86);
+}
+
+.person-research-viewer[hidden] {
+  display: none;
+}
+
+.person-research-viewer-open {
+  overflow: hidden;
+}
+
+.person-research-toolbar {
+  justify-self: end;
+  display: flex;
+  gap: 8px;
+}
+
+.person-research-tool {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  box-shadow: 4px 4px 0 0 #555;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+
+  &:hover,
+  &:focus-visible {
+    background: #ffe66d;
+    outline: none;
+  }
+}
+
+.person-research-canvas {
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    #111;
+  background-size: 24px 24px;
+  border: 2px solid #fff;
+  cursor: zoom-in;
+  touch-action: pan-x pan-y;
+
+  &.is-zoomed {
+    justify-content: flex-start;
+    cursor: grab;
+  }
+
+  &.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+}
+
+.person-research-expanded-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  background: #fff;
+  transform-origin: top left;
+}
+
 @keyframes person-rise {
   from {
     opacity: 0;
@@ -340,6 +460,28 @@
   .person-content {
     font-size: 1rem;
     line-height: 1.7;
+  }
+
+  .person-research-trigger-icon {
+    right: 10px;
+    bottom: 10px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .person-research-viewer {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .person-research-toolbar {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .person-research-tool {
+    width: 40px;
+    height: 40px;
   }
 }
 
