@@ -188,8 +188,8 @@
 }
 
 .hiring-detail-shell {
-  width: calc(100% - 32px);
-  max-width: 1180px;
+  width: calc(100% - 48px);
+  max-width: 1092px;
   margin: 0 auto;
   display: grid;
   gap: 24px;
@@ -324,36 +324,47 @@
 
 .hiring-role-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  border: 2px solid #000;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
 
 .hiring-role-card {
-  min-height: 150px;
-  padding: 18px;
-  border-right: 1px solid #000;
+  overflow: hidden;
+  border: 2px solid #000;
+  background: #f4f6f1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 18px;
-
-  &:last-child {
-    border-right: none;
-  }
 
   h3 {
-    margin-top: 8px;
+    margin: 0;
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: clamp(0.98rem, 2vw, 1.18rem);
+    line-height: 1.2;
   }
+}
+
+.hiring-role-card-header {
+  min-height: 112px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hiring-role-card-title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  min-width: 0;
 }
 
 .hiring-role-count {
   font-family: var(--font-serif);
-  font-size: 3.2rem;
+  font-size: clamp(2.5rem, 5vw, 3.35rem);
   font-weight: 800;
-  line-height: 0.9;
+  line-height: 0.8;
 }
 
 .hiring-grant-link {
@@ -363,9 +374,78 @@
   &:hover {
     background: #000;
     color: #fff;
-    box-shadow: 5px 5px 0 0 #555;
-    transform: translate(-2px, -2px);
-    border: none;
+  }
+}
+
+.hiring-job-description {
+  border-top: 2px solid #000;
+  background: #fff;
+
+  summary {
+    min-height: 56px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.hiring-job-description-icon {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.16s ease;
+}
+
+.hiring-job-description[open] .hiring-job-description-icon {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
+.hiring-job-description-content {
+  padding: 20px 20px 24px;
+  border-top: 2px solid #000;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  h2,
+  h3 {
+    margin: 22px 0 10px;
+    color: #000;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.35;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin: 0 0 14px;
+  }
+
+  ul {
+    margin: 0 0 18px;
+    padding-left: 22px;
+    list-style: disc;
+    list-style-position: outside;
+  }
+
+  li + li {
+    margin-top: 7px;
   }
 }
 
@@ -398,8 +478,7 @@
     grid-template-columns: 1fr;
   }
 
-  .hiring-summary-card,
-  .hiring-role-card {
+  .hiring-summary-card {
     border-right: none;
     border-bottom: 1px solid #000;
 
@@ -419,6 +498,20 @@
 
   .hiring-vacancy-meta {
     justify-content: flex-start;
+  }
+
+  .hiring-job-description summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hiring-role-card-header {
+    align-items: center;
+  }
+
+  .hiring-role-card-title {
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
 

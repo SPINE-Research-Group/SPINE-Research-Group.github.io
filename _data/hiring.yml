@@ -8,9 +8,11 @@
     - title: "PhD"
       count: 3
       apply_subject: "PhD application - LP250200550 Linkage Projects"
+      description: "lp250200550-phd"
     - title: "Postdoc"
       count: 1
       apply_subject: "Postdoc application - LP250200550 Linkage Projects"
+      description: "lp250200550-postdoc"
 
 - name: "DP250100582 Discovery Projects"
   detail: "Privacy-Aware Intelligent Digital Twin for Secure Critical Infrastructures."
@@ -23,9 +25,11 @@
     - title: "PhD"
       count: 3
       apply_subject: "PhD application - DP250100582 Discovery Projects"
+      description: "dp250100582-phd"
     - title: "Postdoc"
       count: 1
       apply_subject: "Postdoc application - DP250100582 Discovery Projects"
+      description: "dp250100582-postdoc"
 
 - name: "LP240100417 Linkage Projects"
   detail: "Federated Fine-Tuning Framework for Secure and Collaborative GenAI Models."
@@ -38,6 +42,8 @@
     - title: "PhD"
       count: 2
       apply_subject: "PhD application - LP240100417 Linkage Projects"
+      description: "lp240100417-phd"
     - title: "Postdoc"
       count: 1
       apply_subject: "Postdoc application - LP240100417 Linkage Projects"
+      description: "lp240100417-postdoc"

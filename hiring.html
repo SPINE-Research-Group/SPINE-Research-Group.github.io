@@ -20,7 +20,7 @@ nav_active: hiring
       <div>
         <p class="person-profile-role">SPINE Research Group</p>
         <h1 id="hiring-title">We are hiring for following projects</h1>
-        <p class="hiring-detail-intro">PhD and postdoctoral positions across ARC-funded security, privacy, intelligence, and edge computing projects.</p>
+        <p class="hiring-detail-intro">PhD and postdoctoral positions across ARC-funded security, privacy, AI, and quantum computing projects.</p>
       </div>
       <div class="hiring-title-count" aria-label="{{ hiring_total }} open roles">
         <span>{{ hiring_total }}</span>
@@ -52,12 +52,31 @@ nav_active: hiring
 
         <div class="hiring-role-grid">
           {% for role in project.roles %}
+          {% assign description_doc = nil %}
+          {% for hiring_description in site.hiring_descriptions %}
+            {% if hiring_description.slug == role.description %}
+              {% assign description_doc = hiring_description %}
+            {% endif %}
+          {% endfor %}
           <div class="hiring-role-card">
-            <div>
-              <span class="hiring-role-count">{{ role.count }}</span>
-              <h3>{{ role.title }} {% if role.count == 1 %}position{% else %}positions{% endif %}</h3>
+            <div class="hiring-role-card-header">
+              <div class="hiring-role-card-title">
+                <span class="hiring-role-count">{{ role.count }}</span>
+                <h3>{{ role.title }} {% if role.count == 1 %}position{% else %}positions{% endif %}</h3>
+              </div>
+              <a class="hiring-apply" href="mailto:ibrahim.khalil@rmit.edu.au?subject={{ role.apply_subject | uri_escape }}">Apply</a>
             </div>
-            <a class="hiring-apply" href="mailto:ibrahim.khalil@rmit.edu.au?subject={{ role.apply_subject | uri_escape }}">Apply</a>
+            {% if description_doc %}
+            <details class="hiring-job-description">
+              <summary>
+                <span>Job description</span>
+                <span class="hiring-job-description-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="hiring-job-description-content">
+                {{ description_doc.content | markdownify }}
+              </div>
+            </details>
+            {% endif %}
           </div>
           {% endfor %}
         </div>

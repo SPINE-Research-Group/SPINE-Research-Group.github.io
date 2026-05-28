@@ -20,6 +20,8 @@ collections:
     output: false
   alumni:
     output: false
+  hiring_descriptions:
+    output: false
 
 sass:
   style: compressed
