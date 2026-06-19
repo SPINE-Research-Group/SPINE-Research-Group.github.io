@@ -62,13 +62,26 @@
             class="hero-photo"
           >
         </div>
+
+        <div class="hero-slide">
+          <img
+            src="{{ '/images/hero-image-4.png' | relative_url }}"
+            alt="SPINE Research Group lab members"
+            class="hero-photo"
+          >
+        </div>
         </div><!-- /.hero-slides-track -->
 
-        <div class="hero-dots" role="tablist" aria-label="Carousel slides">
-          <button class="hero-dot active" aria-label="Slide 1: Lab stats"  aria-selected="true"></button>
-          <button class="hero-dot"        aria-label="Slide 2: Lab photo"  aria-selected="false"></button>
-          <button class="hero-dot"        aria-label="Slide 3: Lab photo 2"  aria-selected="false"></button>
-          <button class="hero-dot"        aria-label="Slide 4: Lab photo 3"  aria-selected="false"></button>
+        <div class="hero-controls" aria-label="Carousel controls">
+          <button class="hero-arrow hero-arrow-prev" type="button" aria-label="Previous slide">&larr;</button>
+          <div class="hero-dots" role="tablist" aria-label="Carousel slides">
+            <button class="hero-dot active" aria-label="Slide 1: Lab stats"  aria-selected="true"></button>
+            <button class="hero-dot"        aria-label="Slide 2: Lab photo"  aria-selected="false"></button>
+            <button class="hero-dot"        aria-label="Slide 3: Lab photo 2"  aria-selected="false"></button>
+            <button class="hero-dot"        aria-label="Slide 4: Lab photo 3"  aria-selected="false"></button>
+            <button class="hero-dot"        aria-label="Slide 5: Lab photo 4"  aria-selected="false"></button>
+          </div>
+          <button class="hero-arrow hero-arrow-next" type="button" aria-label="Next slide">&rarr;</button>
         </div>
 
       </div>

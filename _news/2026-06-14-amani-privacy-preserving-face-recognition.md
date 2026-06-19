@@ -1,7 +1,7 @@
 ---
 headline: "Paper accepted on privacy-preserving class imbalance mitigation for face recognition"
 title: "Paper accepted on privacy-preserving class imbalance mitigation for face recognition"
-timestamp: 2026-06-14 09:00:00 +1000
+timestamp: 2026-05-18 09:00:00 +1000
 description: "Amani Aldahiri's paper on privacy-preserving class imbalance mitigation for face recognition has been accepted in High-Confidence Computing."
 author: SPINE Research Group
 ---

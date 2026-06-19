@@ -69,6 +69,8 @@
     (function () {
       const slides = document.querySelectorAll('.hero-slide');
       const dots   = document.querySelectorAll('.hero-dot');
+      const prev   = document.querySelector('.hero-arrow-prev');
+      const next   = document.querySelector('.hero-arrow-next');
       if (!slides.length) return;
 
       let current = 0;
@@ -95,6 +97,22 @@
           startTimer();
         });
       });
+
+      if (prev) {
+        prev.addEventListener('click', () => {
+          clearInterval(timer);
+          goTo(current - 1);
+          startTimer();
+        });
+      }
+
+      if (next) {
+        next.addEventListener('click', () => {
+          clearInterval(timer);
+          goTo(current + 1);
+          startTimer();
+        });
+      }
 
       startTimer();
     })();
