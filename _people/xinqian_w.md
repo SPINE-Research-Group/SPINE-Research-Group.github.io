@@ -1,7 +1,7 @@
 ---
 name: "Xinqian Wang"
 title: "PhD Student"
-image: "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
+image: "images/people/xinqian.jpeg"
 linkedinurl: "https://www.linkedin.com/in/wang-xinqian-andy-364145220/"
 email: "S3965998@student.rmit.edu.au"
 intro: >-

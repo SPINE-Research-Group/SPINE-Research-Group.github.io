@@ -1,34 +1,44 @@
 ---
 layout: default
-bodyClass: "page-services"
+body_class: "news-page"
 ---
-<div class="intro">
-    <div class="container">
-      <div class="row justify-content-left">
-        <div class="col-12 col-md-7 col-lg-12 order-2 order-md-1 text-left">
-          {{ content }}
-        </div>
-      </div>
+
+<section class="news-archive">
+  <div class="container">
+    <div class="news-page-intro">
+      {{ content }}
     </div>
-</div>
-  
-  <div class="container pt-12 pb-12 mb-5">
-    <div class="row">
-      {% for news in site.news %}
-      <div class="col-12 col-md-12 mb-3">
-        <div class="service service-summary">
-          <div class="service-content">
-            <h2 class="service-title">
-              <a href="{{ news.url | relative_url }}">{{ news.title }}</a>
-            </h2>
-            <p class="subTextBold">By {{ news.author}}</p>
-            <p class="subTextLight">
-                {{ news.datetime | date: "%Y-%m-%d" }}
-            </p>            
-              <p>{{ news.excerpt | markdownify | strip_html | truncate: 200 }}</p>
+
+    {% assign sorted_news = site.news | sort: "timestamp" | reverse %}
+    {% if sorted_news.size > 0 %}
+    <div class="news-grid news-grid--archive">
+      {% for item in sorted_news %}
+      <article class="news-card{% if item.image %} news-card--with-image{% endif %}">
+        <a href="{{ item.url | relative_url }}" class="news-card-link">
+          <div class="news-card-header">
+            <span>Archived fax</span>
+            <span>No. {{ forloop.index | prepend: '00' | slice: -3, 3 }}</span>
           </div>
-        </div>
-      </div>
+          {% if item.image %}
+          <div class="news-image-wrap">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.headline | default: item.title }}">
+          </div>
+          {% endif %}
+          <div class="news-card-body">
+            <time class="news-date" datetime="{{ item.timestamp | default: item.datetime | date_to_xmlschema }}">
+              {{ item.timestamp | default: item.datetime | date: "%d %b %Y, %H:%M" }}
+            </time>
+            <h2 class="news-title">{{ item.headline | default: item.title }}</h2>
+            <p class="news-description">
+              {{ item.description | default: item.excerpt | markdownify | strip_html | truncate: 220 }}
+            </p>
+          </div>
+        </a>
+      </article>
       {% endfor %}
     </div>
+    {% else %}
+    <p class="news-empty">No news yet.</p>
+    {% endif %}
   </div>
+</section>

@@ -1,6 +1,9 @@
 ---
+headline: "RMIT research agenda drives THE ranking success"
 title: "RMIT research agenda drives THE ranking success"
+timestamp: 2024-10-20 09:00:00 +1100
 datetime: 2024-10-20
+description: "RMIT improved two places to rank equal 14 in Australia in the latest Times Higher Education World University Rankings."
 author: Society and Environment
 ---
 

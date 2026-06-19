@@ -22,7 +22,7 @@ Security,  Privacy, Federated Learning,  GenAI/LLM, Blockchain, and Distributed 
 
 - **Phone:** 0399252879  
 - **ORCID:** [0000-0001-5512-114X](https://orcid.org/0000-0001-5512-114X)  
-- **DBLP Profile:** [https://dblp.org/pers/hd/k/Khalil:Ibrahim](https://dblp.org/pers/hd/k/Khalil:Ibrahim)  
+- **DBLP Profile:** [https://dblp.org/pid/41/749.html](https://dblp.org/pid/41/749.html)  
 - **ResearchGate:** [https://www.researchgate.net/profile/Ibrahim_Khalil25](https://www.researchgate.net/profile/Ibrahim_Khalil25)  
 - **Frontiers Loop:** [https://loop.frontiersin.org/people/1030674/bio](https://loop.frontiersin.org/people/1030674/bio)
 <br/><br/>

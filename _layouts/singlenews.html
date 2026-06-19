@@ -1,15 +1,33 @@
 ---
 layout: default
-bodyClass: "page-services"
+body_class: "news-item-page"
 ---
 
-<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-  <div class="row justify-content-start">
-    <div class="col-12 col-md-8">
-      <div class="service service-single">
-        <h1 class="title">{{page.title}}</h1>
-        <div class="content">{{content}}</div>
+<section class="news-single-section">
+  <div class="container">
+    <article class="news-single-paper">
+      <div class="news-card-header">
+        <span>SPINE Research Group memo</span>
+        <span>{{ page.timestamp | default: page.datetime | date: "%Y-%m-%d" }}</span>
       </div>
-    </div>
+
+      {% if page.image %}
+      <div class="news-single-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.headline | default: page.title }}">
+      </div>
+      {% endif %}
+
+      <time class="news-date" datetime="{{ page.timestamp | default: page.datetime | date_to_xmlschema }}">
+        {{ page.timestamp | default: page.datetime | date: "%d %b %Y, %H:%M" }}
+      </time>
+      <h1 class="news-single-title">{{ page.headline | default: page.title }}</h1>
+      {% if page.description %}
+      <p class="news-single-description">{{ page.description }}</p>
+      {% endif %}
+      <div class="news-single-content">
+        {{ content }}
+      </div>
+    </article>
+    <a href="{{ '/news/' | relative_url }}" class="news-back-link">Back to all news</a>
   </div>
-</div>
+</section>

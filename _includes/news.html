@@ -1,15 +1,42 @@
 <section id="news">
   <div class="container">
-    <h2 class="section-heading">News</h2>
-    <div class="news-list">
-      {% assign sorted_news = site.news | sort: "datetime" | reverse %}
-      {% for item in sorted_news %}
-      <div class="news-card">
-        <span class="news-num">{{ forloop.index }}.</span>
-        <span class="news-text">{{ item.title }}</span>
-        <span class="news-date">{{ item.datetime | date: "%b %-d, %Y" }}</span>
-      </div>
+    <div class="news-heading-row">
+      <h2 class="section-heading">News</h2>
+    </div>
+
+    {% assign sorted_news = site.news | sort: "timestamp" | reverse %}
+    {% if sorted_news.size > 0 %}
+    <div class="news-grid news-grid--home">
+      {% for item in sorted_news limit: 3 %}
+      <article class="news-card{% if item.image %} news-card--with-image{% endif %}">
+        <a href="{{ item.url | relative_url }}" class="news-card-link">
+          <div class="news-card-header">
+            <span>Incoming fax</span>
+            <span>No. {{ forloop.index | prepend: '00' | slice: -3, 3 }}</span>
+          </div>
+          {% if item.image %}
+          <div class="news-image-wrap">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.image_alt | default: item.headline | default: item.title }}">
+          </div>
+          {% endif %}
+          <div class="news-card-body">
+            <time class="news-date" datetime="{{ item.timestamp | default: item.datetime | date_to_xmlschema }}">
+              {{ item.timestamp | default: item.datetime | date: "%d %b %Y, %H:%M" }}
+            </time>
+            <h3 class="news-title">{{ item.headline | default: item.title }}</h3>
+            <p class="news-description">
+              {{ item.description | default: item.excerpt | markdownify | strip_html | truncate: 180 }}
+            </p>
+          </div>
+        </a>
+      </article>
       {% endfor %}
     </div>
+    <div class="news-footer-row">
+      <a href="{{ '/news/' | relative_url }}" class="news-archive-link">View all news</a>
+    </div>
+    {% else %}
+    <p class="news-empty">No news yet.</p>
+    {% endif %}
   </div>
 </section>

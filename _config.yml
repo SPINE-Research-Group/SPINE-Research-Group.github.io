@@ -15,7 +15,8 @@ collections:
   past_members:
     output: false
   news:
-    output: false
+    output: true
+    permalink: /news/:path/
   publications:
     output: false
   alumni:
@@ -36,6 +37,11 @@ defaults:
       type: "people"
     values:
       layout: person
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: singlenews
 
 exclude:
   - Gemfile

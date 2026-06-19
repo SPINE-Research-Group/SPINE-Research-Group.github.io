@@ -1,6 +1,6 @@
 ---
 name: "Charitha Elvitigala"
-title: "PhD Student"
+title: ""
 image: "images/people/charitha.jpeg"
 linkedinurl: "https://www.linkedin.com/in/charith-elvitigala/"
 email: "S3974060@student.rmit.edu.au"

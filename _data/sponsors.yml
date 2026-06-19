@@ -7,6 +7,23 @@
   amount: "AUD 568,955"
   url: "https://dataportal.arc.gov.au/NCGP/Web/Grant/Grant/LP250200550"
 
+- name: "CSIRO Industry PhD Program 2026"
+  detail: "Secure, privacy-preserving, and trustworthy multi-agent interoperability framework."
+  funder: "CSIRO"
+  years: "2026–TBC"
+  status: "Open"
+  investigators: "Prof Ibrahim Khalil; Dr Dilum Bandara; Mr Roshan Elvitigala"
+  amount: "AUD 250,000 (Approx)"
+  url: "https://research.csiro.au/iphd-opportunities/secure-privacy-preserving-and-trustworthy-multi-agent-interoperability-framework/"
+
+- name: "CSIRO iPhD 2025"
+  detail: "Enhancing organisational cybersecurity with AI-driven threat intelligence and Large Language Models (LLM)."
+  funder: "CSIRO"
+  years: "2026–2029"
+  investigators: "Prof Ibrahim Khalil"
+  amount: "AUD 250,000 (Approx)"
+  url: ""
+
 - name: "DP250100582 Discovery Projects"
   detail: "Privacy-Aware Intelligent Digital Twin for Secure Critical Infrastructures."
   funder: "Australian Research Council"
